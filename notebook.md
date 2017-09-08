@@ -17,7 +17,7 @@
 
 * 09/08/19 Started draft version for Paper 1 topic
 
-#Assignments
+# Assignments
 
 * 08/24/17 Created github, futuresystems.org and Chameloncloud accounts
 * 08/24/17 Entry survey had completed
