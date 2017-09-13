@@ -1,11 +1,12 @@
 # Logistic
 
-* 08/25/17 Read the entire class overview section 
+* 08/25/17 Read the entire class overview section
+* 09/12/17 Attended Class Hour with Prof. Gregor and Juliette. Obtained useful information about how to use LaTex with emacs and JabRef for Papers and Project writings.
 
 # Theory
 
 * 08/29/17 Learnt about Piazza folders and their usages for the class.
-* 08/31/17 - 09/02/17 Read and watched all videso in the Theory Introduction section. Uderstood about Writing Track, Theroy Track and Practice Track
+* 08/31/17 - 09/02/17 Read and watched all videso in the Theory Introduction section. Understood about Writing Track, Theroy Track and Practice Track
 * 09/07/17 Started research for Paper 1 topic
 * 09/08/17 - 09/13/17 Read the theory and watched videos for topics,
 	3.2.1. Data Science generics and Commercial Data Deluge
