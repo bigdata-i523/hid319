@@ -1,5 +1,3 @@
-# hid319
-
 # Owner
 
 ```
@@ -14,11 +12,11 @@ owner:
 ```
 paper1:
    author: 
-   - Andres Castro
    - Mani Kumar Kagita
+   - Andres Castro Benavides
    hid:
-   - 305
    - 319
+   - 305
    title: Big Data Analytics for Municipal Waste Management
    abstract: 
      As waste management becomes a greater concern for cities and
@@ -27,7 +25,7 @@ paper1:
      strategies, but also provide information that can be used to
      optimize the systems used in various institutions, local
      government, companies, etc
-   url: https://github.com/bigdata-i523/hid319/paper1/paper1.pdf
+   url: https://github.com/bigdata-i523/hid319/paper1/report.pdf
    type: latex
    status: in progress
 ```
@@ -49,7 +47,7 @@ paper2:
      This paper will allow to explore telecom companies on how 
      effective decisions can be made using Big Data Analytics 
      to retain, gain and expand their customer database.
-   url: https://github.com/bigdata-i523/hid319/paper2/paper2.pdf
+   url: https://github.com/bigdata-i523/hid319/paper2/report.pdf
    type: latex
    status: Yet to start
 ```
