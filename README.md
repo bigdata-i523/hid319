@@ -18,7 +18,7 @@ paper1:
    - 319
    - 305
    title: Big Data Analytics for Municipal Waste Management
-   abstract: 
+   abstract: >
      As waste management becomes a greater concern for cities and
      municipalities around the world, big data analysis has the
      potential to not only help assess the current waste management
@@ -39,7 +39,7 @@ paper2:
    hid:
    - 319
    title: Big data Analytics and effective decision making in Telecommunication industry
-   abstract: 
+   abstract: >
      Huge amounts of data is being collected on daily basis from 
      mobile phones, tablets, network equipments, billing information 
      by Telecomminication companies providing vast database of 
