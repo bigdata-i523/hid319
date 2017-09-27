@@ -13,6 +13,7 @@
 	3.2.2. Data Deluge and Scientific Applications and Methodology
 * 09/14/17 - 09/19/17 Completed section 3.2. Overview of Data Science
 * 09/23/17 Read and watched all videos in Overview of NIST Big Data PWG Process and Results.
+* 09/24/17 - 09/27/17 Read and watched videos for 3.3 Big Data Use Cases Survey
 
 # Practice
 
@@ -21,6 +22,7 @@
 * 09/13/17 Practicing on Interative Python. Completed reading and practicing with various sample examples using Statements and Strings, Variables, Data Types and Control statements.
 * 09/19/17 Working on excercise: Experimenting with MQTT using NodeMCU kit and Paho MQTT Python client.
 * 09/22/17 Completed exercises with Raspberry Pi. Light LED, Drive Active Buzzer, Button control LED
+* 09/26/17 Completed Smart Robot car assembly and coding into Audruino UNO using raspberry pi. Working on obstacle avoidance and tracking line part.
 
 # Writing
 
@@ -28,6 +30,7 @@
 * 09/12/17 Gathered some useful information from internet for Paper 1
 * 09/18/17 Started working on ShareLaTex and JabRef
 * 09/23/17 Preparing report.tex and report.bib
+* 09/27/17 Working on Paper 1 draft.
 
 # Assignments
 
