@@ -1,7 +1,6 @@
 # Logistic
 
 * 08/25/17 Read the entire class overview section
-* 09/12/17 Attended Class Hour with Prof. Gregor and Juliette. Obtained useful information about how to use LaTex with emacs and JabRef for Papers and Project writings.
 
 # Theory
 
@@ -22,7 +21,7 @@
 * 09/13/17 Practicing on Interative Python. Completed reading and practicing with various sample examples using Statements and Strings, Variables, Data Types and Control statements.
 * 09/19/17 Working on excercise: Experimenting with MQTT using NodeMCU kit and Paho MQTT Python client.
 * 09/22/17 Completed exercises with Raspberry Pi. Light LED, Drive Active Buzzer, Button control LED
-* 09/26/17 Completed Smart Robot car assembly and coding into Audruino UNO using raspberry pi. Working on obstacle avoidance and tracking line part.
+* 09/26/17 Completed Smart Robot car assembly and coding into Arduino UNO using raspberry pi. Working on obstacle avoidance and Line Tracking.
 
 # Writing
 
@@ -31,6 +30,18 @@
 * 09/18/17 Started working on ShareLaTex and JabRef
 * 09/23/17 Preparing report.tex and report.bib
 * 09/27/17 Working on Paper 1 draft.
+
+# Meetings
+
+* 09/12/17 - Meeting: Attended class meeting for online students.
+* 09/19/17 - Meeting: Attended class meeting for online students.
+* 09/26/17 - Meeting: Attended class meeting for online students.
+
+# Location
+
+* Address: Malaysia, Jalan SS21/58
+* Latitude: 3.136421
+* Longitude: 101.620718
 
 # Assignments
 
