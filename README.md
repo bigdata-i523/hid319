@@ -25,7 +25,7 @@ paper1:
      strategies, but also provide information that can be used to
      optimize the systems used in various institutions, local
      government, companies, etc
-   url: https://github.com/bigdata-i523/hid319/paper1/report.pdf
+   url: https://github.com/bigdata-i523/hid305/paper1/report.pdf
    type: latex
    status: in progress
    chapter: Government

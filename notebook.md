@@ -13,6 +13,7 @@
 * 09/14/17 - 09/19/17 Completed section 3.2. Overview of Data Science
 * 09/23/17 Read and watched all videos in Overview of NIST Big Data PWG Process and Results.
 * 09/24/17 - 09/27/17 Read and watched videos for 3.3 Big Data Use Cases Survey
+* 10/02/17 Reading articles on Principal Component Analysis(PCA) for paper 1
 
 # Practice
 
@@ -22,6 +23,7 @@
 * 09/19/17 Working on excercise: Experimenting with MQTT using NodeMCU kit and Paho MQTT Python client.
 * 09/22/17 Completed exercises with Raspberry Pi. Light LED, Drive Active Buzzer, Button control LED
 * 09/26/17 Completed Smart Robot car assembly and coding into Arduino UNO using raspberry pi. Working on obstacle avoidance and Line Tracking.
+* 10/02/17 Practicing Python
 
 # Writing
 
@@ -30,12 +32,14 @@
 * 09/18/17 Started working on ShareLaTex and JabRef
 * 09/23/17 Preparing report.tex and report.bib
 * 09/27/17 Working on Paper 1 draft.
+* 10/02/17 Wording with Andres (hid305) for Paper 1. This paper will be uploaded into hid305 paper1 directory.
 
 # Meetings
 
 * 09/12/17 - Meeting: Attended class meeting for online students.
 * 09/19/17 - Meeting: Attended class meeting for online students.
 * 09/26/17 - Meeting: Attended class meeting for online students.
+* 09/30/17 - Meeting: Attended class meeting for online students with TA Miao.
 
 # Location
 
