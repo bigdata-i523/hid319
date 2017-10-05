@@ -14,6 +14,7 @@
 * 09/23/17 Read and watched all videos in Overview of NIST Big Data PWG Process and Results.
 * 09/24/17 - 09/27/17 Read and watched videos for 3.3 Big Data Use Cases Survey
 * 10/02/17 Reading articles on Principal Component Analysis(PCA) for paper 1
+* 10/05/17 Reading chapter 3.8.Sensors Case Study
 
 # Practice
 
@@ -33,6 +34,7 @@
 * 09/23/17 Preparing report.tex and report.bib
 * 09/27/17 Working on Paper 1 draft.
 * 10/02/17 Wording with Andres (hid305) for Paper 1. This paper will be uploaded into hid305 paper1 directory.
+* 10/05/17 Working on Paper1 and uploaded latest draft to git. Continuing research on paper.
 
 # Meetings
 
@@ -40,6 +42,7 @@
 * 09/19/17 - Meeting: Attended class meeting for online students.
 * 09/26/17 - Meeting: Attended class meeting for online students.
 * 09/30/17 - Meeting: Attended class meeting for online students with TA Miao.
+* 10/03/17 - Meeting: Attended class meeting for online students.
 
 # Location
 
