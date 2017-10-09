@@ -35,6 +35,7 @@
 * 09/27/17 Working on Paper 1 draft.
 * 10/02/17 Wording with Andres (hid305) for Paper 1. This paper will be uploaded into hid305 paper1 directory.
 * 10/05/17 Working on Paper1 and uploaded latest draft to git. Continuing research on paper.
+* 10/09/17 Completed writing Paper1 and uploaded the changes into git.
 
 # Meetings
 
