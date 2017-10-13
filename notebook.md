@@ -25,6 +25,7 @@
 * 09/22/17 Completed exercises with Raspberry Pi. Light LED, Drive Active Buzzer, Button control LED
 * 09/26/17 Completed Smart Robot car assembly and coding into Arduino UNO using raspberry pi. Working on obstacle avoidance and Line Tracking.
 * 10/02/17 Practicing Python
+* 10/03/17 - 10/12/17 Experimenting with Robot Smart Car obstacle avoidance and Line Tracking.
 
 # Writing
 
@@ -36,6 +37,7 @@
 * 10/02/17 Wording with Andres (hid305) for Paper 1. This paper will be uploaded into hid305 paper1 directory.
 * 10/05/17 Working on Paper1 and uploaded latest draft to git. Continuing research on paper.
 * 10/09/17 Completed writing Paper1 and uploaded the changes into git.
+* 10/13/17 Reviewing paper1 contents of different authors.
 
 # Meetings
 
