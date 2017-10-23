@@ -28,7 +28,7 @@ paper1:
     url: https://github.com/bigdata-i523/hid305/paper1/report.pdf
 paper2:
     abstract: >
-         Connecting Raspberry Pi to the ESP8266 via wifi and control the direction from Pi
+         Connecting Raspberry Pi to the ESP8266 via wifi and control the smart car direction from Pi
     author:
         - Mani Kumar Kagita
     hid:
