@@ -17,7 +17,7 @@ for i in range(j):
     overallWorkItems.append(items)
 
 # plotting data into bubble chart
-sizes = np.array(counts.values())**2
+sizes = np.array(overallWorkItems)**1.5
 plt.scatter(workCategory, overallWorkItems, s=sizes, marker='o', c=sizes)
 
 # adding labels
