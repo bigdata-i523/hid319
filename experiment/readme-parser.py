@@ -14,7 +14,7 @@ content = []
 counter = 0
 
 # Read input file
-with open('README.md', 'r') as f:
+with open('README.yml', 'r') as f:
     lines = f.readlines()
 
 

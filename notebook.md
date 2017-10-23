@@ -15,6 +15,7 @@
 * 09/24/17 - 09/27/17 Read and watched videos for 3.3 Big Data Use Cases Survey
 * 10/02/17 Reading articles on Principal Component Analysis(PCA) for paper 1
 * 10/05/17 Reading chapter 3.8.Sensors Case Study
+* 10/15/17 Completed Sensors Case Study
 
 # Practice
 
@@ -26,6 +27,7 @@
 * 09/26/17 Completed Smart Robot car assembly and coding into Arduino UNO using raspberry pi. Working on obstacle avoidance and Line Tracking.
 * 10/02/17 Practicing Python
 * 10/03/17 - 10/12/17 Experimenting with Robot Smart Car obstacle avoidance and Line Tracking.
+* 10/23/17 Completed Experiments on histogram and polyfit programs
 
 # Writing
 
@@ -38,6 +40,7 @@
 * 10/05/17 Working on Paper1 and uploaded latest draft to git. Continuing research on paper.
 * 10/09/17 Completed writing Paper1 and uploaded the changes into git.
 * 10/13/17 Reviewing paper1 contents of different authors.
+* 10/15/17 - 10/23/17 Working on Paper2 mini project: ESP8266 and Raspberry Pi Robot car
 
 # Meetings
 
@@ -46,6 +49,7 @@
 * 09/26/17 - Meeting: Attended class meeting for online students.
 * 09/30/17 - Meeting: Attended class meeting for online students with TA Miao.
 * 10/03/17 - Meeting: Attended class meeting for online students.
+* 10/24/17 - Meeting: Attended class meeting for online students.
 
 # Location
 
