@@ -2,6 +2,11 @@
 owner:
     hid: 319
     name: Mani Kumar Kagita
+    firstname: Mani Kumar
+    lastname: Kagita
+    longitude: 3.136421
+    latitude: 101.620718
+    city: Malaysia, Jalan SS21/58
     url: https://github.com/bigdata-i523/hid319
 paper1:
     abstract: >
@@ -23,17 +28,12 @@ paper1:
     url: https://github.com/bigdata-i523/hid305/paper1
 paper2:
     abstract: >
-        Huge amounts of data is being collected on daily basis from  mobile
-        phones, tablets, network equipments, billing information  by Telecomminication
-        companies providing vast database of  information about their subscribers
-        and their trends. This paper will allow to explore telecom companies on how  effective
-        decisions can be made using Big Data Analytics  to retain, gain and expand
-        their customer database.
+         Connecting Raspberry Pi to the ESP8266 via wifi and control the smart car direction from Pi
     author:
         - Mani Kumar Kagita
     hid:
         - 319
     status: Yet to start
-    title: Big data Analytics and effective decision making in Telecommunication industry
+    title: Mini Project: ESP8266 & Raspberry PI Robot Car
     type: latex
     url: https://github.com/bigdata-i523/hid319/paper2/report.pdf
