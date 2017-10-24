@@ -10,11 +10,12 @@ owner:
     url: https://github.com/bigdata-i523/hid319
 paper1:
     abstract: >
-        As waste management becomes a greater concern for cities and municipalities
-        around the world, big data analysis has the potential to not only help assess
-        the current waste management strategies, but also provide information that
-        can be used to optimize the systems used in various institutions, local government,
-        companies, etc.
+        As waste management becomes a greater concern for cities and
+        municipalities around the world, big data analysis has the
+        potential to not only help assess the current waste management
+        strategies, but also provide information that can be used to
+        optimize the systems used in various institutions, local
+        government, companies, etc.
     author:
         - Andres Castro Benavides
         - Mani Kumar Kagita
@@ -28,12 +29,13 @@ paper1:
     url: https://github.com/bigdata-i523/hid305/paper1
 paper2:
     abstract: >
-         Connecting Raspberry Pi to the ESP8266 via wifi and control the smart car direction from Pi
+        Connecting Raspberry Pi to the ESP8266 via wifi and control
+        the smart car direction from Pi
     author:
         - Mani Kumar Kagita
     hid:
         - 319
-    status: Yet to start
-    title: Mini Project: ESP8266 & Raspberry PI Robot Car
-    type: latex
-    url: https://github.com/bigdata-i523/hid319/paper2/report.pdf
+    status: 0%
+    title: "Mini Project: ESP8266 & Raspberry PI Robot Car"
+    type: project
+    url: https://github.com/bigdata-i523/hid319/paper2
