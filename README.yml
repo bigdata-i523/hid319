@@ -23,7 +23,6 @@ paper1:
     hid:
         - 305
         - 319
-    status: 100%
     title: Big Data Analytics for Municipal Waste Management
     status: 10/17/17
     type: latex
