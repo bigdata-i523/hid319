@@ -16,6 +16,9 @@
 * 10/02/17 Reading articles on Principal Component Analysis(PCA) for paper 1
 * 10/05/17 Reading chapter 3.8.Sensors Case Study
 * 10/15/17 Completed Sensors Case Study
+* 10/23/17 Need to take off from studies due to emergency back home
+* 11/10/17 Reading different Case Studies
+* 11/15/17 Learnt about yaml
 
 # Practice
 
@@ -28,6 +31,7 @@
 * 10/02/17 Practicing Python
 * 10/03/17 - 10/12/17 Experimenting with Robot Smart Car obstacle avoidance and Line Tracking.
 * 10/23/17 Completed Experiments on histogram and polyfit programs
+* 11/10/17 Practicing with yaml
 
 # Writing
 
@@ -41,6 +45,8 @@
 * 10/09/17 Completed writing Paper1 and uploaded the changes into git.
 * 10/13/17 Reviewing paper1 contents of different authors.
 * 10/15/17 - 10/23/17 Working on Paper2 mini project: ESP8266 and Raspberry Pi Robot car
+* 11/10/17 Completed working on the code for Paper2 on Robot car
+* 11/19/17 Completed 80% of Paper2. Delayed due to off for emergency.
 
 # Meetings
 
