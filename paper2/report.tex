@@ -33,7 +33,7 @@
 
 
 \begin{abstract}
-Robotics is the fastest and emerging field in modern world. By providing sufficient intelligence to an autonomous driving robot, it must be able to detect the obstacles coming in its path and should avoid them. Ultrasonic distance sensors provide data to autonomously detect obstacles and avoid in an unstructured environment without having human interference or guidance. A 3 wheeled, two gear motors are used to build the Autonomous Intelligent Robot which is controlled through WIFI using ESP8266 controller and Raspberry Pi. An Arduino program is constructed in ESP8266 NodeMCU board that can produce a multi-angle movement for the Robot to freely move in all directions and also choosing directions to turn based on the detected obstacles. 
+Robotics is the fastest and emerging field in modern world. By providing sufficient intelligence to an autonomous driving robot, it must be able to detect the obstacles coming in its path and should avoid them. Ultrasonic distance sensors provide data to autonomously detect obstacles and avoid in an unstructured environment without having human interference or guidance. A 3 wheeled, two gear motors are used to build the Autonomous Intelligent Robot which is controlled through WIFI using ESP8266 controller and Raspberry Pi. An Arduino program is constructed in ESP8266 NodeMCU board that can produce a multi-angle movement for the Robot to freely move in all directions and choose directions to turn based on the detected obstacles. 
 
 \end{abstract}
 
@@ -45,7 +45,7 @@ Robotics is the fastest and emerging field in modern world. By providing suffici
 A Robot car is a electro-mechanical machine which is usually guided by a computer program and electronic devices. The main objective of any autonomous robot car is to be navigated in any structured or unstructured environments by avoiding obstacles and prevent collisions. 
 Collision avoidance is the process in preventing a vehicle from colliding with any other vehicle or object. 
 To be effective, the distance from robot car to the obstacle should be constantly measured in real-time as position of autonomous robot car changes with the time.
-Proximity ultrasonic distance measuring sensors are integrated to robot car so as to determine the distance to an object. Using ESP8266 NodeMCU module and webserver to control robot car over wifi. A computer program will be written into this module using wifi too instead of connecting USB cable to laptop. The main advantage of robot car is to stream live videos to the user over wifi and also for security purposes when added a camera to it.
+Proximity ultrasonic distance measuring sensors are integrated to robot car so as to determine the distance to an object. Using ESP8266 NodeMCU module robot car can be controlled over wifi. Also a computer program can be remotely sent to this module using wifi instead of connecting USB cable to laptop. The main advantage of robot car is to stream live videos to the user over wifi and also for security purposes when added a camera to it.
 
 
 \section{COLLISION AVOIDANCE}
@@ -56,7 +56,7 @@ System Architecture consists of following blocks :
 \begin{description}
     \item[$\bullet$] Raspberry Pi
 
-    \item[$\bullet$] ESP8266 NodeMCU board
+    \item[$\bullet$] ESP8266 NodeMCU 
 
     \item[$\bullet$] 3 wheel Robot Car kit
 
@@ -66,86 +66,49 @@ System Architecture consists of following blocks :
     
     \item[$\bullet$] Ultrasonic Distance Measuring Sensor Module 
     
-    \item[$\bullet$] Breadboard and jumper cables
-    
 \end{description}
 
 The Mechanical design of the Robot car includes hardware such as motor and wheel placement and body setup. Robot car uses two gear-motors attached to wheels and one free wheel for forward, backward, left and right movements. Free wheel ball is placed at rear side of the robot which helps for 360 degrees free movement. L298N DC Stepper Motor Drive controller is used to control the speed and direction of the two gear motor wheels. Ultrasonic sensors are placed at front side of the robot which is capable to detect the objects on its path.
 
-\section{Data Flow Diagram}
 \begin{figure}[ht!]
   \includegraphics[width=0.5\textwidth]{FlowDiagram.png}
   \caption{Data Flow Diagram}
 \end{figure}
 
-\section{Technological Review}
-Technological Components
-\begin{description}
-\item[$\bullet$] Raspbian(Operating System)
-\item[$\bullet$] Arduino tool
-\item[$\bullet$] Wi-Fi
-\end{description}
-
 \section{System, Software and Hardware Requirements}
 \subsection{Platform Requirement}
-\subsubsection{Windows}
+\subsubsection{Raspbian Operating System}
 \begin{description}
-\item[$\bullet$] Window 7 and above Microsoft Windows is a series of
-graphical interface operating systems developed, marketed,
-and sold by Microsoft.
-\item[$\bullet$] Microsoft introduced an operating environment named Windows on November 20, 1985 as a graphical operating system shell for MS-DOS in response to the growing interest in graphical user interfaces(GUIs).
+\item[$\bullet$] Raspbian is a open-source operating system based on Debian which is optimized for Raspberry Pi hardware. This operating system comes with 35000 inbuilt packages, pre-compiled software for easy installation on Raspberry Pi.
 \end{description}
 
-
-\subsubsection{Android}
-\begin{description}
-\item[$\bullet$] Android OS Android is a mobile operating system (OS) based on the Linux kernel and currently developed by Google.
-\item[$\bullet$] Android is designed primarily for touch screen mobile devices such as smart phones and table computers, with specialized user interfaces.
-\end{description}
-
-The Software Requirements in this project include:
+\subsection{Software Requirement}
+The Software Requirements for designing Robot car includes:
 1. JDK
-2. Arduino
-3. Android Studio
-Eclipse :
-Eclipse is an integrated development
-environment (IDE). It contains a base workspace and an
-extensible plug-in system for customizing the environment.
+2. Arduino IDE
+3. ESP8266Wifi library
+4. Servo library
+5. NewPing library
 
 \subsubsection{JDK : Java Platform (JDK)}
 The Java Development Kit (JDK) is an implementation
-of either one of the Java SE, Java EE or Java ME platforms released by Oracle Corporation in the form of a binary product aimed at Java developers on Solaris, Linux, Mac OS X or Windows.
-The JDK includes a private JVM and a few other
-resources to finish the recipe to a Java Application.
+of either one of the Java SE, Java EE or Java ME platforms released by Oracle Corporation in the form of a binary product aimed at Java developers on Solaris, Linux, Mac OS X or Windows. The JDK includes a private JVM and a few other resources to finish the recipe to a Java Application.
 
-\subsubsection{Arduino}
-Arduino is a tool for making computers that can sense and control more of the physical world than your desktop computer. It’s an open-source physical computing platform based on a simple microcontroller board, and a development environment for writing software for the board.
+\subsubsection{Arduino IDE}
+Arduino IDE tool. This open-source tool allows to write programs and uploaded into any arduino supported boards. It can be operated in two ways. If there is a reliable internet connection, Ardiono Web Editor (online IDE) can be used allowing to save the sketches to store in the cloud and having them available from any type of device and to have a good backup. For offline works, Desktop IDE can be used ~\cite{arduino2015}. To program into ESP8266 NodeMCU, Ardiono IDE is installed on Raspberry Pi to check the code and loads it into ESP8266 board.
 
 \subsection{HARDWARE REQUIREMENT}
 The Hardware components required for our project are Min 1 GB of RAM,10 GB HDD, Dual core processor for the machine on which development will be done, Robot kit, IP Camera, Bluetooth Module etc for developing the robot.
 
 Hardware Requirement
 \begin{description}
-\item[a)] Android Smartphone
-\item[b)] Bluetooth module
-\item[c)] Microcontroller(Arduino)
+\item[c)] ESP8266 NodeMCU
 \item[d)] DC power supply
 \item[e)] Motor Driver
 \item[f)] DC motor
 \item[g)] Wires, Breadboard, Small PCB.
 \end{description}
 
-
-\section{Circuit Block Diagram}
-
-\section{Main Component}
-
-\section{Application}
-1. Scientific
-2. Space Probes
-3. Submarines
-4. Military and Law Enforcement
-5. Recreation and Hobby
 
 \section{Code}
 \begin{lstlisting}
@@ -351,33 +314,17 @@ void loop()
 }
 
 
-
-
 \end{lstlisting}
 
-\section{Goals and Objectives}
-''Robot Controlled Car Using Wireless Module'' at the title
-suggests is aimed to construct a control system that enables the
-complete control of the interface of Machine.
-It include two separate units :-
-\begin{description}
-\item[$\bullet$] The Android Phone
-
-\item[$\bullet$] Control Unit.
-\end{description}
-Two Operating Environments :-
-\begin{description}
-\item[$\bullet$] The android phone will operate indoors
-
-\item[$\bullet$] Outdoors whereas the control unit will operate
-indoors within the temperature and humidity limits for proper
-operation of the hardware.
-\end{description}
-
-
-
+\section{Application}
+1. Scientific
+2. Space Probes
+3. Submarines
+4. Military and Law Enforcement
+5. Recreation and Hobby
 
 \section{Conclusion}
+In these modern days, long distance communication is a crucial theory of controlling things from internet and this leads a for a vast application areas. Obstacle avoidance robot can be controlled by wifi which can track the obstacles along its path way and can be easily controlled remotely.
 
 \begin{acks}
 
@@ -385,7 +332,7 @@ The authors would like to thank Dr. Gregor von Laszewski for his support and sug
 
 \end{acks}
 
-%\bibliographystyle{ACM-Reference-Format}
-%\bibliography{report} 
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{report1} 
 
 \end{document}
