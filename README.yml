@@ -40,3 +40,17 @@ paper2:
     title: "Mini Project: ESP8266 And Raspberry Pi Robot Car"
     type: project
     url: https://github.com/bigdata-i523/hid319/paper2
+project:
+    review: Dec 10 2017
+    author:
+        - Mani Kumar Kagita
+    hid:
+        - 319
+    status: 30%
+    title: Facial Recognition and Object Detection using Raspberry Pi Robot Car
+    abstract: >
+        A learning application development system using Raspberry Pi contrilled Robot car to function
+        as obstacle avoidance, Facial detection and wireless remote control. This will be extended to
+        upload live streaming into webserver.
+    type: project
+    url: https://github.com/bigdata-i523/hid319/project
