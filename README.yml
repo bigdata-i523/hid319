@@ -54,3 +54,4 @@ project:
         upload live streaming using camera from Robot car into webserver.
     type: project
     url: https://github.com/bigdata-i523/hid319/project
+    chapter: Edge Computing
