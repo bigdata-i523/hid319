@@ -40,6 +40,7 @@ paper2:
     title: "Mini Project: ESP8266 And Raspberry Pi Robot Car"
     type: project
     url: https://github.com/bigdata-i523/hid319/paper2
+    chapter: Edge Computing
 project:
     review: Dec 10 2017
     author:
