@@ -33,7 +33,8 @@
 
 
 \begin{abstract}
-Face recognition is an exciting field of computer vision with many possible applications to hardware and devices. Using embedded platforms like the Raspberry Pi and open source computer vision libraries like OpenCV, you can now add face recognition to your own maker projects! In today's world, face recognition is an important part for the purpose of security and surveillance. Hence there is a need for an efficient and cost effective system. Our goal is to explore the feasibility of implementing Raspberry Pi based face recognition system using conventional face detection and recognition techniques such as Haar detection and PCA. This paper aims at taking face recognition to a level in which the system can replace the use of passwords and RF I-Cards for access to high security systems and buildings. With the use of the Raspberry Pi kit, we aim at making the system cost effective and easy to use, with high performance.
+Face recognition is an exciting and emerging field of computer vision with many  applications to hardware and devices. Using embedded platforms like the Raspberry Pi, a camera module and open source computer vision libraries like OpenCV, purpose is to add face recognition to Robot car and also facial recognition using free developer version of Kairos Facial Recognition software.
+In today's modern world, face recognition playing an important role for the purpose of security and surveillance and hence there is a need for an efficient and cost effective system. So the main goal is to explore the feasibility of implementing Raspberry Pi based facial recognition system using conventional face detection and recognition techniques such as Haarcascade detection and Kairos. An obstacle avoidance Robot car is integrated with Raspberry Pi and a camera module aiming at taking face recognition to a level in which the system can identify the humans who are stuck in buildings during earth quakes.  Raspberry Pi kit provides the system cost effective and easy to use, with high performance.
 
 \end{abstract}
 
@@ -124,9 +125,72 @@ System Architecture consists of following blocks :
 
 The Mechanical design of the Robot car includes hardware such as motor and wheel placement and body setup. Robot car uses two gear-motors attached to wheels and one free wheel for forward, backward, left and right movements. Free wheel ball is placed at rear side of the robot which helps for 360 degrees free movement. L298N DC Stepper Motor Drive controller is used to control the speed and direction of the two gear motor wheels. Ultrasonic sensors are placed at front side of the robot which is capable to detect the objects on its path. Raspberry Pi Camera module is used to monitor the live stream and recognize the face if its detected.
 
+\section{Setup}
+\subsection{Connect Raspberry Pi}
+This section includes connectivity of Raspberry Pi over Wifi. 
+\begin{description}
 
-\section{System, Software and Hardware Requirements}
-\subsection{Platform Requirement}
+    \item[$\bullet$] Download Raspbian OS to an SD card with a minimum capacity of 8GB.
+    
+    \item[$\bullet$] Plug in USB power cable, keyboard, mouse and monitor cables to Raspberry Pi.
+    
+    \item[$\bullet$] Insert the SD card with Raspbian OS into Pi and boot the system. Once the Pi is booted up, a window will appear with Raspbian operating system. Click on Raspbian and Install.
+    
+    \item[$\bullet$] When the install process has completed, the Raspberry Pi configuration menu (raspi-config) will load. Here  set the time and date for your region.
+    
+    \item[$\bullet$] Enable wifi on upper right corner and connect to wifi sid.
+\end{description}
+
+\subsection{Connect Raspberry Pi Camera Module}
+\begin{description}
+    \item[$\bullet$] Install the Raspberry Pi Camera module by inserting the cable into the Raspberry Pi.
+    \item[$\bullet$] The cable slots into the connector situated between the Ethernet and HDMI ports, with the silver connectors facing the HDMI port.
+    \item[$\bullet$] Boot up your Raspberry Pi and run below commands in command prompt.
+    \item[$\bullet$] sudo apt-get install python-pip
+    \item[$\bullet$] sudo apt-get install python-dev
+    \item[$\bullet$] sudo pip install picamera
+    \item[$\bullet$] sudo pip install rpio
+    \item[$\bullet$] From the prompt, run ''sudo raspi-config''. 
+    \item[$\bullet$] If the ''camera'' option is not listed, you will need to run a few commands to update your Raspberry Pi. Run ''sudo apt-get update'' and ''sudo apt-get upgrade''
+\end{description}
+\subsubsection{Enable Camera}
+For Face Detaction, PiCamera should be enable from Raspberry Pi. Below list of figures shows the detailed steps on how to enable PiCamera from Raspberry Pi.
+
+\begin{figure}[ht!]
+  \includegraphics[width=0.5\textwidth]{project/images/enablecamera1.jpg}
+  \caption{Edit raspi-config file from command line}
+\end{figure}
+
+\begin{figure}[ht!]
+  \includegraphics[width=0.5\textwidth]{project/images/enablecamera2.jpg}
+  \caption{Select Camera from the options}
+\end{figure}
+
+\begin{figure}[ht!]
+  \includegraphics[width=0.5\textwidth]{project/images/enablecamera3.jpg}
+  \caption{Enable Camera}
+\end{figure}
+
+\subsection{Install OpenCV and Required Libraries}
+OpenCV computer vision library is used to perform face detection and recognition. For this, first need to install OpenCV dependencies on Raspberry Pi. Below commands needs to be executed. 
+\begin{description}
+    \item[$\bullet$] sudo apt-get update
+    \item[$\bullet$] sudo apt-get upgrade
+    \item[$\bullet$] sudo apt-get install build-essential
+    \item[$\bullet$] cmake pkg-config python-dev libgtk2.0-dev libgtk2.0 zlib1g-dev libpng-dev libjpeg-dev libtiff-dev libjasper-dev libavcodec-dev swig unzip
+    \item[$\bullet$] Select yes for all options and wait for the libraries and dependencies to be installed
+\end{description}
+Download opencv-2.4.9 zip file to Raspberry Pi. Change the directory and execute cmake command as below.
+\begin{description}
+    \item[$\bullet$] cd opencv-2.4.9
+    \item[$\bullet$] sudo apt-get install build-essential cmake pkg-config
+    \item[$\bullet$] sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+    \item[$\bullet$] sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+    \item[$\bullet$] sudo apt-get install python-opencv
+    \item[$\bullet$] sudo apt-get install python-matplotlib
+    \item[$\bullet$] Latest version of OpenCV is now installed in Raspberry Pi
+\end{description}
+
 
 
 
@@ -146,4 +210,3 @@ The authors would like to thank Dr. Gregor von Laszewski for his support and sug
 \bibliography{project} 
 
 \end{document}
-
