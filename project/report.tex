@@ -19,7 +19,7 @@
 
 \begin{document}
 
-\title{Facial Detection and Recognition Using Raspberry Pi Robot Car}
+\title{Face Detection and Recognition Using Raspberry Pi Robot Car}
 
 \author{Mani Kumar Kagita}
 \affiliation{%
@@ -45,7 +45,7 @@ In today's modern world, face recognition playing an important role for the purp
 \section{Introduction}
 An area of application of Computer Vision, one that has always fascinated people, concerns the capability of robots and computers in general to determine, recognize and interact with human counterparts. In this article we will take advantage of the availability of cheap tools for computing and image acquisition, like Raspberry Pi and his dedicated video camera, Camera Pi, and of open source software products for image acquisition and processing, such as OpenCV and SimpleCV, that allow a high level approach to this discipline, and therefore quite a simplified one.
 
-the possibility to locate, within the context of pictures, human beings or their parts like faces, eyes, nose, and so on. This functionality is available in the most advanced photo gallery applications, and it is currently in the implementation phase as for social network applications. Once photos are loaded, the system will scan them to search for people’s faces, will find them out and will give a chance to associate a name. If, by chance, the same person is present in different pictures, he/she is recognized and automatically “ registered ”, notwithstanding privacy concerns. This last functionality is the one we previously cited as the one for identification or recognition.
+The possibility to locate, within the context of pictures, human beings or their parts like faces, eyes, nose, and so on. This functionality is available in the most advanced photo gallery applications, and it is currently in the implementation phase as for social network applications. Once photos are loaded, the system will scan them to search for people’s faces, will find them out and will give a chance to associate a name. If, by chance, the same person is present in different pictures, he/she is recognized and automatically “ registered ”, notwithstanding privacy concerns. This last functionality is the one we previously cited as the one for identification or recognition.
 
 The information age is quickly revolutionizing the way transactions are completed. There is a need for a faster and accurate user identification and authentication method. Face recognition has become one of the most important user identification methods. Literature survey statistics shows that research work in face recognition system is in its booming era, and in the past forty years, the research in this field has increased exponentially. 
 
@@ -84,6 +84,7 @@ PuTTY is an SSH and telnet client, developed originally by Simon Tatham for the 
 OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products. Being a BSD-licensed product, OpenCV makes it easy for businesses to utilize and modify the code. The library has more than 2500 optimized algorithms, which includes a comprehensive set of both classic and state-of-the-art computer vision and machine learning algorithms. These algorithms can be used to detect and recognize faces, identify objects, classify human actions in videos, track camera movements, track moving objects and extract 3D models of objects.
 
 \subsubsection{Python 2 IDE}
+Python 2.7.x version Integrated Development Environment is used to compile python program in Raspberry Pi. IDE is a text editor plus terminal combination which is used to work on large projects with complex code bases.
 
 \subsubsection{Kairos Facial Recognition Software}
 Kairos is an artificial intelligence company specializing in face recognition. Through computer vision and machine learning, Kairos can recognize faces in videos, photos, and the real-world - making it easier than ever to transform the way your business interacts with people.
@@ -92,6 +93,7 @@ Kairos is an artificial intelligence company specializing in face recognition. T
   \item[$\bullet$] Emotions 
   \item[$\bullet$] Demographics
 \end{description}
+
 Kairos navigates the complexities of face analysis technology, so you don’t have to. We offer APIs and SDKs any developer can integrate with ease.
 
 \subsection{Hardware Used}
@@ -118,8 +120,6 @@ System Architecture consists of following blocks :
     \item[$\bullet$] L298N DC Stepper Motor Drive Controller 
 
     \item[$\bullet$] 12v and 5v DC batteries
-    
-    \item[$\bullet$] Ultrasonic Distance Measuring Sensor Module 
     
 \end{description}
 
@@ -191,7 +191,24 @@ Download opencv-2.4.9 zip file to Raspberry Pi. Change the directory and execute
     \item[$\bullet$] Latest version of OpenCV is now installed in Raspberry Pi
 \end{description}
 
+\subsection{Integration of Raspberry Pi with Robot Car}
+Raspberry Pi connected with PiCamera is integrated with Robot car to navigate using webserver. During the navigation, robot car will look for human faces using PiCamera and then detects the face. Once the face is detected, python program will call Kairos facial detection software to identify the person and greet with the name. If the human face is unidentified then robot car will ask human to register their name.
 
+As shown in the figure below, connect a Robot car chassis to raspberry pi and follow the circuit connections.
+
+\begin{figure}[ht!]
+  \includegraphics[width=0.5\textwidth]{project/images/RaspPi_Robot.jpg}
+  \caption{Raspberry Pi Robot Car Integration}
+\end{figure}
+
+\begin{description}
+    \item[$\bullet$] Motor1A : 16 (GPIO 23 - Pin 16)
+    \item[$\bullet$] Motor1B : 18 (GPIO 24 - Pin 18)
+    \item[$\bullet$] Motor1Enable : 22 (GPIO 25 - Pin 22)
+    \item[$\bullet$] Motor2A : 21 (GPIO 9 - Pin 21)
+    \item[$\bullet$] Motor2B : 19 (GPIO 10 - Pin 19)
+    \item[$\bullet$] Motor2Enable : 23 (GPIO 11 - Pin 23)
+\end{description}
 
 
 \section{Application}
