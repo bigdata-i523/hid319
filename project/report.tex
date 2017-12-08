@@ -1,1 +1,149 @@
+\documentclass[sigconf]{acmart}
+
+\input{format/i523}
+
+\graphicspath{ {images/} }
+
+\usepackage{listings}
+
+\lstset{frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+
+\title{Facial Detection and Recognition Using Raspberry Pi Robot Car}
+
+\author{Mani Kumar Kagita}
+\affiliation{%
+  \institution{Indiana University}
+  \streetaddress{107 S. Indiana Avenue}
+  \city{Bloomington} 
+  \state{Indiana} 
+  \postcode{43017-6221}
+}
+\email{mkagita@iu.edu}
+
+
+\begin{abstract}
+Face recognition is an exciting field of computer vision with many possible applications to hardware and devices. Using embedded platforms like the Raspberry Pi and open source computer vision libraries like OpenCV, you can now add face recognition to your own maker projects! In today's world, face recognition is an important part for the purpose of security and surveillance. Hence there is a need for an efficient and cost effective system. Our goal is to explore the feasibility of implementing Raspberry Pi based face recognition system using conventional face detection and recognition techniques such as Haar detection and PCA. This paper aims at taking face recognition to a level in which the system can replace the use of passwords and RF I-Cards for access to high security systems and buildings. With the use of the Raspberry Pi kit, we aim at making the system cost effective and easy to use, with high performance.
+
+\end{abstract}
+
+\keywords{Raspberry Pi, Robot Car, Face Recognition, Face Identification, I523, HID319}
+
+\maketitle
+
+\section{Introduction}
+An area of application of Computer Vision, one that has always fascinated people, concerns the capability of robots and computers in general to determine, recognize and interact with human counterparts. In this article we will take advantage of the availability of cheap tools for computing and image acquisition, like Raspberry Pi and his dedicated video camera, Camera Pi, and of open source software products for image acquisition and processing, such as OpenCV and SimpleCV, that allow a high level approach to this discipline, and therefore quite a simplified one.
+
+the possibility to locate, within the context of pictures, human beings or their parts like faces, eyes, nose, and so on. This functionality is available in the most advanced photo gallery applications, and it is currently in the implementation phase as for social network applications. Once photos are loaded, the system will scan them to search for people’s faces, will find them out and will give a chance to associate a name. If, by chance, the same person is present in different pictures, he/she is recognized and automatically “ registered ”, notwithstanding privacy concerns. This last functionality is the one we previously cited as the one for identification or recognition.
+
+The information age is quickly revolutionizing the way transactions are completed. There is a need for a faster and accurate user identification and authentication method. Face recognition has become one of the most important user identification methods. Literature survey statistics shows that research work in face recognition system is in its booming era, and in the past forty years, the research in this field has increased exponentially. ~\cite{arduino2015}
+
+The creation of facial biometric data was the first step in creating complete recognition. The second step was being able to match the data to a database of biometrics and associate it with an individual’s identity. The human eye can quickly process facial characteristics, but the human brain can store only a few hundred faces reliably. After a while, we tend to forget people’s names and often need to relearn information about people. Computers, on the other hand, excel at storing and matching data. Facial recognition software has evolved to the point where computers can process an image and match it against a database of millions of people in seconds.
+
+Law enforcement has led the way with the development of facial recognition systems that can identify criminals against a watch list in real-time. If you’ve traveled through an airport recently, chances are, your facial biometric data has been captured and matched against a watch list.
+
+Having your biometric data stored in a database has raised privacy concerns. Storing biometric data without consent has been a topic of discussion and debate for privacy groups for years and, in some cases, had led to the creation of policies to protect a person’s identity. In addition to privacy concerns, there are also fraud concerns. Having your facial fingerprint matched to what is known as metadata (name, address, and Social Security number, for example) is a major identity theft risk. In order to combat this risk, software vendors have created biometric encryption algorithms to encrypt the data within the database and also provide an almost unbreakable link between the biometric data and the metadata.
+
+\section{Face Detection}
+The definition of face detection refers to computer technology that is able to identify the presence of people’s faces within digital images. In order to work, face detection applications use machine learning and formulas known as algorithms to detecting human faces within larger images. These larger images might contain numerous objects that aren’t faces such as landscapes, buildings and other parts of humans (e.g. legs, shoulders and arms).
+
+Face detection is a broader term than face recognition. Face detection just means that a system is able to identify that there is a human face present in an image or video. Face detection has several applications, only one of which is facial recognition. Face detection can also be used to auto focus cameras. And it can be used to count how many people have entered a particular area. It can even be used for marketing purposes. For example, advertisements can be displayed the moment a face is recognized.
+
+\subsection{How Face Detection Works}
+While the process is somewhat complex, face detection algorithms often begin by searching for human eyes. Eyes constitute what is known as a valley region and are one of the easiest features to detect. Once eyes are detected, the algorithm might then attempt to detect facial regions including eyebrows, the mouth, nose, nostrils and the iris. Once the algorithm surmises that it has detected a facial region, it can then apply additional tests to validate whether it has, in fact, detected a face.
+
+\section{Face Recognition}
+Like all biometrics solutions, face recognition technology measures and matches the unique characteristics for the purposes of identification or authentication. Often leveraging a digital or connected camera, facial recognition software can detect faces in images, quantify their features, and then match them against stored templates in a database.
+Face scanning biometric tech is incredibly versatile and this is reflected in its wide range of potential applications.
+Face biometrics have the potential to be integrated anywhere you can find a modern camera. Law enforcement agencies the world over use biometric software to scan faces in CCTV footage, as well as to identify persons of interest in the field. Border control deployments use face recognition to verify the identities of travelers. It even has consumer applications.
+One of the most important applications of face detection, however, is facial recognition. Face recognition describes a biometric technology that goes way beyond recognizing when a human face is present. It actually attempts to establish whose face it is. The process works using a computer application that captures a digital image of an individual’s face (sometimes taken from a video frame) and compares it to images in a database of stored records. While facial recognition isn’t 100\% accurate, it can very accurately determine when there is a strong chance that an person’s face matches someone in the database.
+
+
+\section{Software and Hardware Specifications}
+In this project we are using OpenCv in Raspberry pi. This project is used to detect the human Face with the help of OpenCv tool. In order to do object detection with cascade files, you first need cascade files. For the extremely popular tasks, these file already exist.
+
+\subsection{Softwares Used}
+
+\subsubsection{Raspian OS}
+This is the recommended os for raspberry pi. You can also installed other OS from third party. Raspbian OS is debian based OS. We can install it from noobs installer. 
+\subsubsection{Putty}
+PuTTY is an SSH and telnet client, developed originally by Simon Tatham for the Windows platform. PuTTY is open source software that is available with source code and is developed and supported by a group of volunteers. Here we are using putty for accessing our raspberry pi remotely.
+
+\subsubsection{OpenCV}
+OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products. Being a BSD-licensed product, OpenCV makes it easy for businesses to utilize and modify the code. The library has more than 2500 optimized algorithms, which includes a comprehensive set of both classic and state-of-the-art computer vision and machine learning algorithms. These algorithms can be used to detect and recognize faces, identify objects, classify human actions in videos, track camera movements, track moving objects and extract 3D models of objects.
+
+\subsubsection{Python 2 IDE}
+
+\subsubsection{Kairos Facial Recognition Software}
+Kairos is an artificial intelligence company specializing in face recognition. Through computer vision and machine learning, Kairos can recognize faces in videos, photos, and the real-world - making it easier than ever to transform the way your business interacts with people.
+\begin{description}
+  \item[$\bullet$] Identity 
+  \item[$\bullet$] Emotions 
+  \item[$\bullet$] Demographics
+\end{description}
+Kairos navigates the complexities of face analysis technology, so you don’t have to. We offer APIs and SDKs any developer can integrate with ease.
+
+\subsection{Hardware Used}
+\subsubsection{Raspberry Pi 3}
+This is the latest version of raspberry pi. In this we have inbuilt Bluetooth and wi-fi, unlike previously we have to use Wi-Fi dongle in one of its usb port. There are total 40 pins in RPI3. Of the 40 pins, 26 are GPIO pins and the others are power or ground pins (plus two ID EEPROM pins.) There are 4 USB Port and 1 Ethernet slot, one HDMI port, 1 audio output port and 1 micro usb port and also many other things you can see the diagram on right side. And also we have one micro sd card slot wherein we have to installed the recommended Operating system on micro sd card. There are two ways to interact with your raspberry pi. Either you can interact directly through HDMI port by connecting HDMI to VGA cable, and keyboard and mouse or else you can interact from any system through SSH(Secure Shell)
+
+\subsubsection{Raspberry Pi Camera}
+The Raspberry Pi camera module can be used to take high-definition video, as well as stills photographs. It’s easy to use for beginners, but has plenty to offer advanced users if you’re looking to expand your knowledge. There are lots of examples online of people using it for time-lapse, slow-motion and other video cleverness. You can also use the libraries we bundle with the camera to create effects.
+
+\subsubsection{Robot Car Chassis Kit}
+The Mechanical design of the Robot car includes hardware such as motor and wheel placement and body setup. Robot car uses two gear-motors attached to wheels and one free wheel for forward, backward, left and right movements. Free wheel ball is placed at rear side of the robot which helps for 360 degrees free movement. L298N DC Stepper Motor Drive controller is used to control the speed and direction of the two gear motor wheels. Ultrasonic sensors are placed at front side of the robot which is capable to detect the objects on its path.
+
+
+
+\section{System Architecture}
+System Architecture consists of following blocks :
+\begin{description}
+    \item[$\bullet$] Raspberry Pi
+
+    \item[$\bullet$] Raspberry Pi Camera module 
+
+    \item[$\bullet$] 3 wheel Robot Car kit
+
+    \item[$\bullet$] L298N DC Stepper Motor Drive Controller 
+
+    \item[$\bullet$] 12v and 5v DC batteries
+    
+    \item[$\bullet$] Ultrasonic Distance Measuring Sensor Module 
+    
+\end{description}
+
+The Mechanical design of the Robot car includes hardware such as motor and wheel placement and body setup. Robot car uses two gear-motors attached to wheels and one free wheel for forward, backward, left and right movements. Free wheel ball is placed at rear side of the robot which helps for 360 degrees free movement. L298N DC Stepper Motor Drive controller is used to control the speed and direction of the two gear motor wheels. Ultrasonic sensors are placed at front side of the robot which is capable to detect the objects on its path. Raspberry Pi Camera module is used to monitor the live stream and recognize the face if its detected.
+
+
+\section{System, Software and Hardware Requirements}
+\subsection{Platform Requirement}
+
+
+
+\section{Application}
+There are lots of applications of face recognition. Face recognition is already being used to unlock phones and specific applications. Face recognition is also used for biometric surveillance. Banks, retail stores, stadiums, airports and other facilities use facial recognition to reduce crime and prevent violence.
+
+\section{Conclusion}
+In these modern days, long distance communication is a crucial theory of controlling things from internet and this leads a for a vast application areas. Obstacle avoidance robot can be controlled by wifi which can track the obstacles along its path way and can be easily controlled remotely.
+
+\begin{acks}
+
+The authors would like to thank Dr. Gregor von Laszewski for his support and suggestions in writing this paper.
+
+\end{acks}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{project} 
+
+\end{document}
 
