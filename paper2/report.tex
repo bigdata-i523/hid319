@@ -220,9 +220,9 @@ void MotorForward(void)
   digitalWrite(leftMotorENB,HIGH);
   digitalWrite(rightMotorENB,HIGH);
   digitalWrite(leftMotorForward,HIGH);
-  digitalWrite(rightMotorForward,LOW);
+  digitalWrite(rightMotorForward,HIGH);
   digitalWrite(leftMotorBackward,LOW);
-  digitalWrite(rightMotorBackward,HIGH);
+  digitalWrite(rightMotorBackward,LOW);
 }
 
 /*** BACKWARD ***/
@@ -231,9 +231,9 @@ void MotorBackward(void)
   digitalWrite(leftMotorENB,HIGH);
   digitalWrite(rightMotorENB,HIGH);
   digitalWrite(leftMotorBackward,HIGH);
-  digitalWrite(rightMotorBackward,LOW);
+  digitalWrite(rightMotorBackward,HIGH);
   digitalWrite(leftMotorForward,LOW);
-  digitalWrite(rightMotorForward,HIGH);
+  digitalWrite(rightMotorForward,LOW);
 }
 
 /*** TURN LEFT ***/
@@ -241,9 +241,9 @@ void TurnLeft(void)
 {
   digitalWrite(leftMotorENB,HIGH);
   digitalWrite(rightMotorENB,HIGH); 
-  digitalWrite(leftMotorForward,LOW);
+  digitalWrite(leftMotorForward,HIGH);
   digitalWrite(rightMotorForward,LOW);
-  digitalWrite(rightMotorBackward,HIGH);
+  digitalWrite(rightMotorBackward,LOW);
   digitalWrite(leftMotorBackward,HIGH);  
 }
 
@@ -253,8 +253,8 @@ void TurnRight(void)
   digitalWrite(leftMotorENB,HIGH);
   digitalWrite(rightMotorENB,HIGH);
   digitalWrite(leftMotorForward,HIGH);
-  digitalWrite(rightMotorForward,HIGH);
-  digitalWrite(rightMotorBackward,LOW);
+  digitalWrite(rightMotorForward,LOW);
+  digitalWrite(rightMotorBackward,HIGH);
   digitalWrite(leftMotorBackward,LOW);
 }
 
