@@ -33,7 +33,7 @@
 
 
 \begin{abstract}
-Robotics is the fastest and emerging field in modern world. By providing sufficient intelligence to an autonomous driving robot, it must be able to detect the obstacles coming in its path and should avoid them. Ultrasonic distance sensors provide data to autonomously detect obstacles and avoid in an unstructured environment without having human interference or guidance. A 3 wheeled, two gear motors are used to build the Autonomous Intelligent Robot which is controlled through WIFI using ESP8266 controller and Raspberry Pi. An Arduino program is constructed in ESP8266 NodeMCU board that can produce a multi-angle movement for the Robot to freely move in all directions and choose directions to turn based on the detected obstacles. 
+Robotics is the fastest and emerging field in modern world. By providing sufficient intelligence to an autonomous driving robot, it must be able to detect the obstacles coming in its path and avoid them. Ultrasonic distance sensors provide data to autonomously detect obstacles and avoid in an unstructured environment without having human guidance. A 3 wheeled, two gear motors are used to build the Autonomous Intelligent Robot which is controlled using ESP8266 controller and Raspberry Pi. An Arduino program is constructed in ESP8266 NodeMCU board that can produce a multi-angle movement for the Robot to freely move in all directions and choose directions to turn based on the detected obstacles. 
 
 \end{abstract}
 
@@ -42,14 +42,22 @@ Robotics is the fastest and emerging field in modern world. By providing suffici
 \maketitle
 
 \section{Introduction}
-A Robot car is a electro-mechanical machine which is usually guided by a computer program and electronic devices. The main objective of any autonomous robot car is to be navigated in any structured or unstructured environments by avoiding obstacles and prevent collisions. 
-Collision avoidance is the process in preventing a vehicle from colliding with any other vehicle or object. 
-To be effective, the distance from robot car to the obstacle should be constantly measured in real-time as position of autonomous robot car changes with the time.
-Proximity ultrasonic distance measuring sensors are integrated to robot car so as to determine the distance to an object. Using ESP8266 NodeMCU module robot car can be controlled over wifi. Also a computer program can be remotely sent to this module using wifi instead of connecting USB cable to laptop. The main advantage of robot car is to stream live videos to the user over wifi and also for security purposes when added a camera to it.
+Robotics is the branch of technology dealing with the design of program, construction, operation, maintenance and design application of robots. A machine capable of automatically carrying out a multi complex series of actions, especially the one programmable by a computer is defined as a robot. 
 
+A Robot car is a electro-mechanical machine which is usually guided by a computer program and electronic devices. The main objective of any autonomous robot car is to be navigated in any structured or unstructured environments by avoiding obstacles and prevent collisions. 
+Collision avoidance is the process in preventing a vehicle from colliding with any other vehicle or object. And, Obstacle avoidance refers to the ability of a robot to detect obstacles in its way if there are any and thus make its own obstacle free path.
+
+To be effective, the distance from robot car to the obstacle should be constantly measured in real-time as position of autonomous robot car changes with the time.
+Proximity ultrasonic distance measuring sensors are integrated to robot car so as to determine the distance to an object. When an obstacle is detected, robot car will start measuring right side and left side proximity using ultrasonic sensors and provide data to micro-controller. Comparing the longest distance from right to that of left, micro-controller will navigate robot car to choose best path. ESP8266 NodeMCU is the micro-controller used here that navigates the robot over wifi. Also a computer program can be remotely sent to this module using wifi instead of connecting USB cable to laptop. The main advantage of robot car is to stream live videos to the user over wifi and also for security purposes when added a camera to it.
+
+\section{Existing System}
+In a general robotic systems, a simple steering algorithm is used for controlling robot actions by a human using a infrared remote control. The driver will be monitoring the obstacles and navigate the robot accordingly. Robot car will get the instructions from infrared signal obtained from remote control and follow the directions.
+
+\section{Proposed System}
+The main objective is to navigate autonomous robot car without using any external remote controller for controlling robot movements. Based on the intelligence provided to the robot car, it will auto detect the obstacles present in its own path using ultrasonic sensors, taking decision to avoid them based on the code written in micro-controller.
 
 \section{COLLISION AVOIDANCE}
-Collision avoidance is said to be one of the driving factors for the design of robot cars. A collision avoidance systems is designed to reduce the collision severity which is also know as pre-crash system or forward collision warning system. Proximity sensors will send data to the robot car on the distance to obstacle. Once the obstacle is detected, robot  car will autonomously take action by halting its movement and check for the direction which is feasible for it to move. 
+Collision avoidance is said to be one of the driving factors for the design of robot cars. A collision avoidance systems is designed to reduce the collision severity which is also know as pre-crash system or forward collision warning system. Proximity sensors will send data to the robot car on the distance to obstacle. Once the obstacle is detected, robot  car will autonomously take action by halting its movement and check for the direction which is feasible for it to move \cite{stratis2009}. 
 
 \section{System Architecture}
 System Architecture consists of following blocks :
@@ -70,9 +78,9 @@ System Architecture consists of following blocks :
 
 The Mechanical design of the Robot car includes hardware such as motor and wheel placement and body setup. Robot car uses two gear-motors attached to wheels and one free wheel for forward, backward, left and right movements. Free wheel ball is placed at rear side of the robot which helps for 360 degrees free movement. L298N DC Stepper Motor Drive controller is used to control the speed and direction of the two gear motor wheels. Ultrasonic sensors are placed at front side of the robot which is capable to detect the objects on its path.
 
-\begin{figure}[ht!]
-  \includegraphics[width=0.5\textwidth]{FlowDiagram.png}
-  \caption{Data Flow Diagram}
+\begin{figure}[htb]
+      \includegraphics[width=\columnwidth]{images/FlowDiagram.png}
+      \caption{Data Flow Diagram}
 \end{figure}
 
 \section{System, Software and Hardware Requirements}
@@ -86,9 +94,6 @@ The Mechanical design of the Robot car includes hardware such as motor and wheel
 The Software Requirements for designing Robot car includes:
 1. JDK
 2. Arduino IDE
-3. ESP8266Wifi library
-4. Servo library
-5. NewPing library
 
 \subsubsection{JDK : Java Platform (JDK)}
 The Java Development Kit (JDK) is an implementation
@@ -102,12 +107,28 @@ The Hardware components required for our project are Min 1 GB of RAM,10 GB HDD, 
 
 Hardware Requirement
 \begin{description}
-\item[c)] ESP8266 NodeMCU
-\item[d)] DC power supply
-\item[e)] Motor Driver
-\item[f)] DC motor
+\item[a)] Raspberry Pi
+\item[c)] ESP8266 NodeMCU micro-controller
+\item[c)] L298 Stepper Motor Driver Controller
+\item[d)] DC power supply 12v and 5v
+\item[e)] Robot Car chassis kit
+\item[f)] Ultrasonic sensor
 \item[g)] Wires, Breadboard, Small PCB.
 \end{description}
+
+\section{Basic Design of the Robot}
+Robot car is built with ESP8266 NodeMCU microcontroller on which programming code is written to control the navigation. ESP8266 is connected with two wheel DC motors through L298 stepper motor driver controller(pins IN1, IN2, IN3, IN4) which provides electric power to the motors. Wheel actuators are used to move robot in different directions(forward, backward, right, left and stop).
+A brief description of input pins is given below.
+\begin{description}
+    \item[$\bullet$] RightMotorForward  : 13  (GPIO15(D8)->IN1)
+    \item[$\bullet$] RightMotorBackward : 15 (GPIO13(D7)->IN2)
+    \item[$\bullet$] LeftMotorForward   : 0    (GPIO2(D4)->IN3)
+    \item[$\bullet$] LeftMotorBackward  : 2   (GPIO0(D3)->IN4)
+    \item[$\bullet$] RightMotorENB      : 14 (GPIO14(D5)->Motor-A Enable)
+    \item[$\bullet$] LeftMotorENB       : 12  (GPIO12(D6)->Motor-B Enable)
+\end{description}
+
+Table below represent input pins for movement of Robot in different directions.
 
 
 \section{Code}
