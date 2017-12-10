@@ -6,8 +6,7 @@
 
 \usepackage{listings}
 
-\lstset{frame=tb,
-  aboveskip=3mm,
+\lstset{aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
   columns=flexible,
@@ -45,9 +44,10 @@ In today`s modern world, face recognition playing an important role for the purp
 \section{Introduction}
 A Computer Vision application which has always encouraged people, concern about the capability and capacity of  robots and computers to determine, detect, recognize and interact with human beings ~\cite{Boris2014}. We will prevail the advantage of cheaper tools that are available in market for computing and detecting human face from the image, recognizing the face using hardware like Raspberry Pi and a video camera that is dedicated to Raspberry Pi. Simple and open source software like OpenCV is used to detect human face from the video that is being captured and the image will be sent to Kairos facial recognition software which allows a high level approach to this process.
 
+In this fastest information era, every information is travelled in split of seconds. There is much more need for accurate and fastest methods in identifying, recognizing and authentication of humans. In the present world, Facial recognition had became most important and crucial form of human identification methods. As per Literature survey statistics in face recognition, the two trends to receive significant attention for the past several years are; the first is the law enforcement applications and also wide range of commercial techniques, and the second is exponential booming of applications and feasible technologies after 30 years of research ~\cite{Riddhi2013}.
+
 The possibility to locate, within the context of pictures, human beings or their parts like faces, eyes, nose, and so on. This functionality is available in the most advanced photo gallery applications, and it is currently in the implementation phase as for social network applications. Once photos are loaded, the system will scan them to search for people`s faces, will find them out and will give a chance to associate a name. If, by chance, the same person is present in different pictures, he/she is recognized and automatically ''registered'', notwithstanding privacy concerns. This last functionality is the one we previously cited as the one for identification or recognition.
 
-The information age is quickly revolutionizing the way transactions are completed. There is a need for a faster and accurate user identification and authentication method. Face recognition has become one of the most important user identification methods. Literature survey statistics shows that research work in face recognition system is in its booming era, and in the past forty years, the research in this field has increased exponentially. 
 
 The creation of facial biometric data was the first step in creating complete recognition. The second step was being able to match the data to a database of biometrics and associate it with an individual`s identity. The human eye can quickly process facial characteristics, but the human brain can store only a few hundred faces reliably. After a while, we tend to forget people`s names and often need to relearn information about people. Computers, on the other hand, excel at storing and matching data. Facial recognition software has evolved to the point where computers can process an image and match it against a database of millions of people in seconds.
 
@@ -69,6 +69,14 @@ Face scanning biometric tech is incredibly versatile and this is reflected in it
 Face biometrics have the potential to be integrated anywhere you can find a modern camera. Law enforcement agencies the world over use biometric software to scan faces in CCTV footage, as well as to identify persons of interest in the field. Border control deployments use face recognition to verify the identities of travelers. It even has consumer applications.
 One of the most important applications of face detection, however, is facial recognition. Face recognition describes a biometric technology that goes way beyond recognizing when a human face is present. It actually attempts to establish whose face it is. The process works using a computer application that captures a digital image of an individual’s face (sometimes taken from a video frame) and compares it to images in a database of stored records. While facial recognition isn`t 100\% accurate, it can very accurately determine when there is a strong chance that an person’s face matches someone in the database.
 In the model employed for the extraction of the features from the images, the reference matrices have different shapes, such as the ones that can be seen in figure, that are more suitable for determining the shapes belonging to the human body, like the eyes or the nose. From this comes their denomination of Haar Features, to distinguish them from their original meaning. The same picture shows the shape of the features used by OpenCV and SimpleCV. The presence or not of a Haar feature in a portion of the picture happens by subtracting the median pixel value that are present in the black  mask  portion, from the median value of the pixels that are present in the clear part of the mask. If the difference is above a certain threshold value, the feature is considered as present. The threshold value is determined, for each feature, during the function training, to detect particular objects or parts of the human body. The learning process materializes itself when presenting to the Vision System the highest possible number of images concerning the objects family that we want to identify, and the highest possible number of images that have nothing to share with the object itself. From the amount of data that are studied, the threshold values are calculated, for each of the features that, in the case of OpenCV and SimpleCV, are memorized as a file in .xml format.
+
+For the past few years, Face recognition has became on of the most commonly used bio-metric authentication techniques. It maily deals with the Pattern recognition and analyzing the images. Two main tasks of Facial recognition are: Face verification and Face Identification. Face Verification is comparing a human face in an image with a template image and recognizing the correct patterns. Face Identification is comparing human face in an image with multiple images in the database. Face recognition techniques have more advantages than any other biometrics. With well sophesticated algorithms and coading, Face recognition has a high recognition rate or high identification rate of more than 90\% ~\cite{Riddhi2013}. 
+
+\begin{figure}[ht!]
+  \includegraphics[width=\columnwidth]{images/Face-recognition.jpg}
+  \caption{Block Diagram of a Face Recognition System}
+\end{figure}
+
 
 \section{Software and Hardware Specifications}
 In this project we are using OpenCv in Raspberry pi. This project is used to detect the human Face with the help of OpenCv tool. In order to do object detection with cascade files, you first need cascade files. For the extremely popular tasks, these file already exist.
