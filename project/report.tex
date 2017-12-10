@@ -59,7 +59,7 @@ Face Detection is termed to only identify if there are any humans present in the
 Face Detection techniques will be widely used in counting how many number of visitors attending a particular event.
 
 \subsection{How Face Detection Works}
-While Face Detection process is somewhat complex, the algorithms will start off by searching for human eyes at first. Eyes usually represents a valley region and its the easiest feature in human face to detect. Once the eyes are detected, then the algorithms will look for rest of the characteristics of a human face such as iris, nose, mouth, eyebrows and nostrils. Face detection algorithm then summerises the data and shows that it has succesfully detected a human face from the facial region. An additional tests can be conducted by the algorithm to make sure and validate if its detected human face or not ~\cite{Jesse2017}.
+While Face Detection process is somewhat complex, the algorithms will start off by searching for human eyes at first. Eyes usually represents a valley region and its the easiest feature in human face to detect. Once the eyes are detected, then the algorithms will look for rest of the characteristics of a human face such as iris, nose, mouth, eyebrows and nostrils. Face detection algorithm then summarizes the data and shows that it has successfully detected a human face from the facial region. An additional tests can be conducted by the algorithm to make sure and validate if its detected human face or not ~\cite{Jesse2017}.
 
 \section{Face Recognition}
 Like all biometrics solutions, face recognition technology measures and matches the unique characteristics for the purposes of identification or authentication. Often leveraging a digital or connected camera, facial recognition software can detect faces in images, quantify their features, and then match them against stored templates in a database.
@@ -77,34 +77,34 @@ For the past few years, Face recognition has became on of the most commonly used
 
 
 \section{Software and Hardware Specifications}
-In this project we are using OpenCv in Raspberry pi. This project is used to detect the human Face with the help of OpenCv tool. In order to do object detection with cascade files, you first need cascade files. For the extremely popular tasks, these file already exist.
+OpenCV is to be installed in Raspberry Pi to detect human faces with in the captured images. Kairos Facial recognition software is used to recognize human face and identify with the corresponding name.
 
 \subsection{Software Used}
 
 \subsubsection{Raspian OS}
-This is the recommended OS for Raspberry Pi. You can also installed other OS from third party. Raspbian OS is debian based OS. We can install it from noobs installer. 
+This is the recommended OS for Raspberry Pi 3.  Raspbian OS is debian based OS. It can be installed from noobs installer. Raspbian comes with pre-installed softwares such as Python, Sonic Pi, Java, Mathematica for programming and education.
 \subsubsection{Putty}
 PuTTY is an SSH and telnet client, developed originally by Simon Tatham for the Windows platform. PuTTY is open source software that is available with source code and is developed and supported by a group of volunteers. Here we are using putty for accessing our raspberry pi remotely.
 
 \subsubsection{OpenCV}
-OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products. Being a BSD-licensed product, OpenCV makes it easy for businesses to utilize and modify the code. The library has more than 2500 optimized algorithms, which includes a comprehensive set of both classic and state-of-the-art computer vision and machine learning algorithms. These algorithms can be used to detect and recognize faces, identify objects, classify human actions in videos, track camera movements, track moving objects and extract 3D models of objects.
+OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in the commercial products. Being a BSD-licensed product, OpenCV makes it easy for businesses to utilize and modify the code. The library has more than 2500 optimized algorithms, which includes a comprehensive set of both classic and state-of-the-art computer vision and machine learning algorithms. These algorithms can be used to detect and recognize faces, identify objects, classify human actions in videos, track camera movements, track moving objects and extract 3D models of objects ~\cite{opencv}.
 
 \subsubsection{Python 2 IDE}
 Python 2.7.x version Integrated Development Environment is used to compile python program in Raspberry Pi. IDE is a text editor plus terminal combination which is used to work on large projects with complex code bases.
 
 \subsubsection{Kairos Facial Recognition Software}
-Kairos is an artificial intelligence company specializing in face recognition. Through computer vision and machine learning, Kairos can recognize faces in videos, photos, and the real-world - making it easier than ever to transform the way your business interacts with people.
+Kairos is an artificial intelligence company specializing in face recognition. Through computer vision and machine learning, Kairos can recognize faces in videos, photos, and the real-world. A captured image is sent to Kairos using an API call and then Kairos will search with the face database. If it matches then will reply with the human name.
 \begin{description}
   \item[$\bullet$] Identity 
   \item[$\bullet$] Emotions 
   \item[$\bullet$] Demographics
 \end{description}
 
-Kairos navigates the complexities of face analysis technology, so you don’t have to. We offer APIs and SDKs any developer can integrate with ease.
+Kairos navigates the complexities of face analysis technology.
 
 \subsection{Hardware Used}
 \subsubsection{Raspberry Pi 3}
-This is the latest version of raspberry pi. In this we have inbuilt Bluetooth and wi-fi, unlike previously we have to use Wi-Fi dongle in one of its usb port. There are total 40 pins in RPI3. Of the 40 pins, 26 are GPIO pins and the others are power or ground pins (plus two ID EEPROM pins.) There are 4 USB Port and 1 Ethernet slot, one HDMI port, 1 audio output port and 1 micro usb port and also many other things you can see the diagram on right side. And also we have one micro sd card slot wherein we have to installed the recommended Operating system on micro sd card. There are two ways to interact with your raspberry pi. Either you can interact directly through HDMI port by connecting HDMI to VGA cable, and keyboard and mouse or else you can interact from any system through SSH(Secure Shell)
+Raspberry Pi 3 is the latest version of Raspberry Pi. Unless previous versions, this have an unbuilt Bluetooth platform and a wi-fi support module. There are total 40 pins in RPI3. Of the 40 pins, 26 are GPIO pins and the others are power or ground pins (plus two ID EEPROM pins.) There are 4 USB Port and 1 Ethernet slot, one HDMI port, 1 audio output port and 1 micro usb port and also many other things you can see the diagram on right side. And also we have one micro sd card slot wherein we have to installed the recommended Operating system on micro sd card. There are two ways to interact with your raspberry pi. Either you can interact directly through HDMI port by connecting HDMI to VGA cable, and keyboard and mouse or else you can interact from any system through SSH(Secure Shell) ~\cite{Deligence2017} 
 
 \subsubsection{Raspberry Pi Camera}
 The Raspberry Pi camera module can be used to take high-definition video, as well as stills photographs. It`s easy to use for beginners, but has plenty to offer advanced users if you’re looking to expand your knowledge. There are lots of examples online of people using it for time-lapse, slow-motion and other video cleverness. You can also use the libraries we bundle with the camera to create effects.
@@ -117,16 +117,14 @@ The Mechanical design of the Robot car includes hardware such as motor and wheel
 \section{System Architecture}
 System Architecture consists of following blocks :
 \begin{description}
-    \item[$\bullet$] Raspberry Pi
-
-    \item[$\bullet$] Raspberry Pi Camera module 
-
-    \item[$\bullet$] 3 wheel Robot Car kit
-
-    \item[$\bullet$] L298N DC Stepper Motor Drive Controller 
-
-    \item[$\bullet$] 12v and 5v DC batteries
-    
+\item[a)] Raspberry Pi
+\item[b)] Raspberry Pi Camera Module
+\item[c)] L298N Dual H-Bridge Stepper Motor Controller
+\item[d)] DC power supply 12v and 5v
+\item[e)] Robot Car chassis kit
+\item[f)] HC-SR04 Ultrasonic Sensor
+\item[g)] SG90 Servo Motor.
+\item[h)] Wires, Breadboard, Small PCB.
 \end{description}
 
 The Mechanical design of the Robot car includes hardware such as motor and wheel placement and body setup. Robot car uses two gear-motors attached to wheels and one free wheel for forward, backward, left and right movements. Free wheel ball is placed at rear side of the robot which helps for 360 degrees free movement. L298N DC Stepper Motor Drive controller is used to control the speed and direction of the two gear motor wheels. Ultrasonic sensors are placed at front side of the robot which is capable to detect the objects on its path. Raspberry Pi Camera module is used to monitor the live stream and recognize the face if its detected.
