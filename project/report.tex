@@ -64,9 +64,7 @@ While Face Detection process is somewhat complex, the algorithms will start off 
 \section{Face Recognition}
 Like most of the biometrics solutions, face recognition technology will be used for identification and authentication purposes by measuring and matching the unique facial characteristics of a human face. Using a digital camera connected to raspberri pi, once the face is detected, facial recognition software will quantify the characteristics of face and then will match with the stored images in database. Once the match is positive, then the corresponding name will be displayed as output ~\cite{biometrics2016}.
 
-Face biometrics have the potential to be integrated anywhere you can find a modern camera. Law enforcement agencies the world over use biometric software to scan faces in CCTV footage, as well as to identify persons of interest in the field. Border control deployments use face recognition to verify the identities of travelers. It even has consumer applications.
-One of the most important applications of face detection, however, is facial recognition. Face recognition describes a biometric technology that goes way beyond recognizing when a human face is present. It actually attempts to establish whose face it is. The process works using a computer application that captures a digital image of an individual’s face (sometimes taken from a video frame) and compares it to images in a database of stored records. While facial recognition isn`t 100\% accurate, it can very accurately determine when there is a strong chance that an person’s face matches someone in the database.
-In the model employed for the extraction of the features from the images, the reference matrices have different shapes, such as the ones that can be seen in figure, that are more suitable for determining the shapes belonging to the human body, like the eyes or the nose. From this comes their denomination of Haar Features, to distinguish them from their original meaning. The same picture shows the shape of the features used by OpenCV and SimpleCV. The presence or not of a Haar feature in a portion of the picture happens by subtracting the median pixel value that are present in the black  mask  portion, from the median value of the pixels that are present in the clear part of the mask. If the difference is above a certain threshold value, the feature is considered as present. The threshold value is determined, for each feature, during the function training, to detect particular objects or parts of the human body. The learning process materializes itself when presenting to the Vision System the highest possible number of images concerning the objects family that we want to identify, and the highest possible number of images that have nothing to share with the object itself. From the amount of data that are studied, the threshold values are calculated, for each of the features that, in the case of OpenCV and SimpleCV, are memorized as a file in .xml format.
+Face biometrics can be integrated to any system having a camera. Border control agencies use face recognition to verify identities of the travellers and can seperate them from the trespassers. Government Law agencies replace all the security cameras around the world with biometric applications to scan faces in CCTV footage, and to identify persons of interest in the field. Face recognition has become one of the fastest and human unintervention techniques to find out the identity of a particula human ~\cite{biometrics2016}.
 
 For the past few years, Face recognition has became on of the most commonly used bio-metric authentication techniques. It maily deals with the Pattern recognition and analyzing the images. Two main tasks of Facial recognition are: Face verification and Face Identification. Face Verification is comparing a human face in an image with a template image and recognizing the correct patterns. Face Identification is comparing human face in an image with multiple images in the database. Face recognition techniques have more advantages than any other biometrics. With well sophesticated algorithms and coading, Face recognition has a high recognition rate or high identification rate of more than 90\% ~\cite{riddhi2013}. 
 
@@ -319,7 +317,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
     print time.time()*1000.0-lastTime," Found {0} faces!".format(len(faces))
     lastTime = time.time()*1000.0
 
-    # Draw a rectangle around the faces
+    # Draw a circle around the faces
     for (x, y, w, h) in faces:
         cv2.circle(image, (x+w/2, y+h/2), int((w+h)/3), (255, 255, 255), 1)
     # show the frame
@@ -343,6 +341,9 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
 
 
 \subsection{Face Recognition}
+For the Face Recognition, we use Kairos to detect the facial characteristics. A json config file is to be placed in the same folder as of the code with Kairos API app id and key value. When the human face is detected, code will generate an API call to Kairos software along with the gallery name, API app id and key values. Image when sending to Kairos, it will be base64 encrypted and will send over the network for security purpose. This encrypted image will then be decrypted at Kairos platform.
+
+
 \begin{lstlisting}
 KAIROS = "api.kairos"
 KairosGallery = 'MyFace'
@@ -390,9 +391,14 @@ class Recognize():
             "app_id": config["app_id"],
             "app_key": config["app_key"]
         }
-        try:
-        r = requests.post("https://api.kairos.com/recognize", headers=headers, data=json.dumps(data))
-        data = r.json()
+\end{lstlisting}
+
+Output from Kairos software is in json format. The output is then segregated as per the key value pairs and then saved into local variables. When the image is recognized, a success transaction message will be obtained from Kairos along with subject id and face id.
+
+\begin{lstlisting}
+try:
+    r = requests.post("https://api.kairos.com/recognize", headers=headers, data=json.dumps(data))
+    data = r.json()
     print data
     # print json.dumps(data, indent=4)
     faces = []
@@ -414,10 +420,12 @@ class Recognize():
             else:
                 print "its in last loop"
             return faces
-        except requests.exceptions.RequestException as exception:
-            print exception
+ except requests.exceptions.RequestException as exception:
+       print exception
         return None
 \end{lstlisting}    
+
+Output from Kairos face recogniion software is to be read to understand if the person name is identified or not. If its identified then the person name sill be listed according to the corresponding person in the image. If the human is not identified, then code will suggest if the user wants to registered for face recognition. Once the user key in the name, Kairos API call is generated while sending newly registered name and the gallery name to that corresponding app id. Here the newly recognized user will be registerd with the name and his image. When the user is reconized by camera in next corresponding events, then Robot car will greet the user with his name.
 
 \begin{lstlisting}
 if __name__ == "__main__":
