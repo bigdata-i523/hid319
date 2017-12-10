@@ -13,17 +13,17 @@ WiFiServer server(80);
 
 #define MAX_DISTANCE    200
 /* WIFI settings */
-const char* ssid = "virusdetected";
-const char* password = "HemaMunna424$$";
+const char* ssid = "sid_username";
+const char* password = "sid_password";
 
 /* data received from application */
 String  data =""; 
 
 /* define L298N motor control pins */
-int rightMotorForward = 12;  /*GPIO14(D5)->IN1*/
-int rightMotorBackward = 14; /*GPIO12(D6)->IN2*/
-int leftMotorForward = 15;    /*GPIO13(D7)->IN3*/
-int leftMotorBackward = 13;   /*GPIO15(D8)->IN4*/
+int rightMotorForward = 12;  /*GPIO14(D5) -- IN1*/
+int rightMotorBackward = 14; /*GPIO12(D6) -- IN2*/
+int leftMotorForward = 15;    /*GPIO13(D7) -- IN3*/
+int leftMotorBackward = 13;   /*GPIO15(D8) -- IN4*/
 
 
 
