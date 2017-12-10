@@ -214,8 +214,34 @@ As shown in the figure below, connect a Robot car chassis to raspberry pi and fo
     \item[$\bullet$] Motor2Enable : 23 (GPIO 11 - Pin 23)
 \end{description}
 
+\subsection{Kairos Face Recognition Setup}
+Kairos Face Recognition system has a free developer account which is used to identify the human name from the images. Once registered a human name with an image, the code will call Kairos API with a newly detected human face and will look for the registered name. Kairos will do a quick lookup in human database from the registered account and if it matches, will send the name of the human back to the code.
+
+Setup as follows:
+
+\begin{description}
+    \item[$\bullet$] Register will https:/www.kairos.com as a free developer account
+    \item[$\bullet$] Login with regisetered username and password
+    \item[$\bullet$] Create an Appname
+    \item[$\bullet$] An App ID and a key are generated. Save this for future use
+    \item[$\bullet$] Enroll users and a gallery name with the user images
+    \begin{lstlisting}
+    POST /enroll HTTP/1.1
+    Content-Type: application/json
+    app_id: 4985f625
+    app_key: aa9e5d2ec3b00306b2d9588c3a25d68e
+    {
+    "image":" http://media.kairos.com/user.jpg ",
+    "subject_id":"User",
+    "gallery_name":"MyGallery"
+    }
+    \end{lstlisting}
+\end{description}
+
 \section{Code Explanation}
 \subsection{Face Detection}
+Import all the related libraries including PiCamera and PiRGBArray libraries for camera to operate in Raspberry Pi. These libraries will help to capture video and images from the PiCamera.
+
 \begin{lstlisting}
 from picamera.array import PiRGBArray
 from picamera import PiCamera
@@ -231,6 +257,7 @@ import random
 import os
 \end{lstlisting}
 
+Haarcascade is a tool to capture the frontal features of face. This tool will help to continuous monitoring for any human face to detect. Once detected a human face, the output values will provide as Human Face Detected from the capturing video.
 
 \begin{lstlisting}
 # Get user supplied values
@@ -240,6 +267,8 @@ cascPath = './haarcascade_frontalface_default.xml'
 faceCascade = cv2.CascadeClassifier(cascPath)
 \end{lstlisting}
 
+Camera settings needs to be updated in the code as per below suggestions. The capture image is to be sent to Kairos for Facial recognition and so we will set the resolution to a lower level. This will help to send the image faster over the network without any delay.
+
 \begin{lstlisting}
 # initialize the camera and grab a reference to the raw camera capture
 camera = PiCamera()
@@ -247,6 +276,26 @@ camera.resolution = (160, 120)
 camera.framerate = 32
 rawCapture = PiRGBArray(camera, size=(160, 120))
 \end{lstlisting}
+
+Below code represents PiCamera continously monitor for human faces detected from the grayscale video capture. Once the human face is detected, espeak function in Raspberry Pi will send the voice to a connected speaker and will output as ``Human face detected``. This detected image is then saved as ``User-Image.jpg`` which is then will be sent to Kairos during Face recognition.
+
+Here are the front, sideviews of the face detected images.
+
+\begin{figure}[ht!]
+  \includegraphics[width=\columnwidth]{images/Face-detect-frontview.png}
+  \caption{Front View of Face detection}
+\end{figure}
+
+\begin{figure}[ht!]
+  \includegraphics[width=\columnwidth]{images/Face-detect-sideview1.png}
+  \caption{Side view 1 of Face detection}
+\end{figure}
+
+\begin{figure}[ht!]
+  \includegraphics[width=\columnwidth]{images/Face-detect-sideview2.png}
+  \caption{Side view 2 of Face detection}
+\end{figure}
+
 
 \begin{lstlisting}
 # allow the camera to warmup
