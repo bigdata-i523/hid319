@@ -108,7 +108,7 @@ The Hardware components required for our project are Min 1 GB of RAM,10 GB HDD, 
 Hardware Requirement
 \begin{description}
 \item[a)] Raspberry Pi
-\item[c)] ESP8266 NodeMCU micro-controller
+\item[b)] ESP8266 NodeMCU micro-controller
 \item[c)] L298N Dual H-Bridge Stepper Motor Controller
 \item[d)] DC power supply 12v and 5v
 \item[e)] Robot Car chassis kit
@@ -164,13 +164,51 @@ Working Principle: The ultrasonic sensor emits a high frequency and short range 
 SG90 servo motor is used to control the directions of ultrasonic sensor. When an obstacle is detected by ultrasonic sensor, robot car will stop its motion and sends signal to SG90 servo motor to rotate right and left directions. Based on the direction ultrasonic sensor will measure the distance and move the robot to the direction which is longer in distance.
 
 \begin{figure}
-	\includegraphics[width=1.0\columnwidth]{paper2/images/SG90-servo.jpg}
+	\includegraphics[width=1.0\columnwidth]{images/SG90-servo.jpg}
 	\caption{SG90 Servo Motor Diagram}
 \end{figure}
 
 \subsection{L298N Dual H-Bridge Stepper Motor Controller}
+The L298N Dual H-Bridge Motor Driver Board is cheapest, great value and can be used with a variety of robot controllers. A powerful L298N motor driver module is featured with a heavy duty heat sink. It is powerful enough to drive motors from 5-35V at up to 2A peak ~\cite{bananarobotics2013}.
+DC motor wheels of Robot is powered using L298N stepper motor which is a typical robot motor driver. A 9v battery pack is connected to the stepper motor controller.
 
+\subsubsection{Connectivity to DC motors and EDP8266 NodeMCU board}
+\begin{description}
+\item[$\bullet$] Robot wheel DC motors attached to the MotorA and MotorB terminal screws
+\item[$\bullet$] Connect ENA to GPIO0 of ESP8266 NodeMCU
+\item[$\bullet$] Connect ENB to GPIO2
+\item[$\bullet$] Connect IN1 to GPIO12
+\item[$\bullet$] Connect IN2 to GPIO14
+\item[$\bullet$] Connect IN3 to GPIO15
+\item[$\bullet$] Connect IN4 to GPIO13
+\end{description}
 
+\begin{figure}
+	\includegraphics[width=1.0\columnwidth]{paper2/images/L298N_Hbridge.jpg}
+	\caption{L298N Dual H-bridge Stepper Motor}
+\end{figure}
+
+\subsection{Arduino IDE setup}
+\subsubsection{Steps:}
+\begin{description}
+\item[$\bullet$] Install Arduino IDE on Raspberry Pi
+\item[$\bullet$] Once installed, lauch Ardiono IDE and select Tools
+\item[$\bullet$] From the dropdown, select Board:  and then select Boards Manager
+\item[$\bullet$] Navigate to esp8266 by esp8266 community and install the software for Arduino.
+\item[$\bullet$] Once the software is installed, goto Tools and select Board: ``NodeMCU 1.0 (ESP-12E Module)``
+\item[$\bullet$] Choose CPU Frequency as 80 MHz
+\item[$\bullet$] Select Upload Speed to 115200
+\item[$\bullet$] Select appropriate port to which ESP8266 is connected to Raspberry Pi for the first time.
+
+\end{description}
+
+\begin{figure}
+	\includegraphics[width=1.0\columnwidth]{paper2/images/Arduino-settings.jpg}
+	\caption{L298N Dual H-bridge Stepper Motor}
+\end{figure}
+
+\section{Code}
+Code for Obstacle Avoidance Robot car is placed in ``Code`` directory. Copy this code to Arduino IDE which is installed on Raspberry Pi.
 
 
 \section{Application}
