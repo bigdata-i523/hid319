@@ -24,7 +24,8 @@ paper1:
         - 305
         - 319
     title: Big Data Analytics for Municipal Waste Management
-    status: 10/17/17
+    review: 10/17/17
+    status: 100%
     type: paper
     url: https://github.com/bigdata-i523/hid305/paper1
 paper2:
@@ -48,10 +49,10 @@ project:
     hid:
         - 319
     status: 80%
-    title: Facial Recognition and Object Detection using Raspberry Pi Robot Car
+    title: Face Detection and Recognition Using Raspberry Pi Robot Car
     abstract: >
         A learning application development system using Raspberry Pi contrilled Robot car to function
-        as obstacle avoidance, Facial detection and wireless remote control. This will be extended to
+        as obstacle avoidance, Facial detection and Facial Regognition. This will be extended to
         upload live streaming using camera from Robot car into webserver.
     type: project
     url: https://github.com/bigdata-i523/hid319/project
