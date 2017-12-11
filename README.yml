@@ -38,7 +38,7 @@ paper2:
     hid:
         - 319
     status: 100%
-    title: "Mini Project: ESP8266 And Raspberry Pi Robot Car"
+    title: "Mini Project: ESP8266 and Raspberry Pi Robot Car"
     type: project
     url: https://github.com/bigdata-i523/hid319/paper2
     chapter: Edge Computing
