@@ -48,7 +48,7 @@ project:
         - Mani Kumar Kagita
     hid:
         - 319
-    status: 80%
+    status: 100%
     title: Face Detection and Recognition Using Raspberry Pi Robot Car
     abstract: >
         A learning application development system using Raspberry Pi contrilled Robot car to function
