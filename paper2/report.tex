@@ -37,6 +37,7 @@ A Robot car is a electro-mechanical machine which is usually guided by a compute
 Collision avoidance is the process in preventing a vehicle from colliding with any other vehicle or object. And, Obstacle avoidance refers to the ability of a robot to detect obstacles in its way if there are any and thus make its own obstacle free path.
 
 To be effective, the distance from robot car to the obstacle should be constantly measured in real-time as position of autonomous robot car changes with the time.
+
 Proximity ultrasonic distance measuring sensors are integrated to robot car so as to determine the distance to an object. When an obstacle is detected, robot car will start measuring right side and left side proximity using ultrasonic sensors and provide data to micro-controller. Comparing the longest distance from right to that of left, micro-controller will navigate robot car to choose best path. ESP8266 NodeMCU is the micro-controller used here that navigates the robot over wifi. Also a computer program can be remotely sent to this module using wifi instead of connecting USB cable to laptop. The main advantage of robot car is to stream live videos to the user over wifi and also for security purposes when added a camera to it.
 
 \section{Existing System}
@@ -46,7 +47,7 @@ In a general robotic systems, a simple steering algorithm is used for controllin
 The main objective is to navigate autonomous robot car without using any external remote controller for controlling robot movements. Based on the intelligence provided to the robot car, it will auto detect the obstacles present in its own path using ultrasonic sensors, taking decision to avoid them based on the code written in micro-controller.
 
 \section{COLLISION AVOIDANCE}
-Collision avoidance is said to be one of the driving factors for the design of robot cars. A collision avoidance systems is designed to reduce the collision severity which is also know as pre-crash system or forward collision warning system. Proximity sensors will send data to the robot car on the distance to obstacle. Once the obstacle is detected, robot  car will autonomously take action by halting its movement and check for the direction which is feasible for it to move \cite{stratis2009}. 
+Collision avoidance is said to be one of the driving factors for the design of robot cars. A collision avoidance systems is designed to reduce the collision severity which is also know as pre-crash system or forward collision warning system. Proximity sensors will send data to the robot car on the distance to obstacle. Once the obstacle is detected, robot  car will autonomously take action by halting its movement and check for the direction which is feasible for it to move ~\cite{stratis2009}. 
 
 \section{System Architecture}
 System Architecture consists of following blocks :
