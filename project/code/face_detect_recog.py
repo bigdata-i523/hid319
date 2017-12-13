@@ -72,8 +72,8 @@ KairosConfig = './kairos_config.json'
 def trainKairos(image, name):
     global KairosGallery
     headers = {
-        'app_id': 'd39fc1b1',
-        'app_key': '468d508d9463c8d24395926adabb1769'
+        'app_id': 'your-app-id',
+        'app_key': 'your-app-key'
     }
     data = {
         'image': base64.b64encode(image),
