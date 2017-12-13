@@ -39,7 +39,7 @@ Collision avoidance is the process in preventing a vehicle from colliding with a
 
 To be effective, the distance from robot car to the obstacle should be constantly measured in real-time as position of autonomous robot car changes with the time.
 
-Proximity ultrasonic distance measuring sensors are integrated to robot car so as to determine the distance to an object. When an obstacle is detected, robot car will start measuring right side and left side proximity using ultrasonic sensors and provide data to micro-controller. Comparing the longest distance from right to that of left, micro-controller will navigate robot car to choose best path. esp8266 NodeMCU is the micro-controller used here that navigates the robot over wifi. Also a computer program can be remotely sent to this module using wifi instead of connecting USB cable to laptop. The main advantage of robot car is to stream live videos to the user over wifi and also for security purposes when added a camera to it.
+Proximity ultrasonic distance measuring sensors are integrated to robot car so as to determine the distance to an object. When an obstacle is detected, robot car will start measuring right side and left side proximity using ultrasonic sensors and provide data to micro-controller. Comparing the longest distance from right to that of left, micro-controller will navigate robot car to choose best path. esp8266 NodeMCU is the micro-controller used here that navigates the robot over wifi. Also a computer program can be remotely sent to this module using wifi instead of connecting USB cable to laptop. The main advantage of robot car is to stream live videos to the user over wifi and also for security purposes when added a camera to it \cite{gregor2017}.
 
 \section{Existing System}
 In a general robotic systems, a simple steering algorithm is used for controlling robot actions by a human using a infrared remote control. The driver will be monitoring the obstacles and navigate the robot accordingly. Robot car will get the instructions from infrared signal obtained from remote control and follow the directions.
@@ -141,9 +141,8 @@ The L298N Dual H-Bridge Motor Driver Board is cheapest, great value and can be u
 DC motor wheels of Robot is powered using L298N stepper motor which is a typical robot motor driver. A 9v battery pack is connected to the stepper motor controller. The diagram in the Figure \ref{F:stepper} shows the pin connectivity of stepper motor controller with the wheel DC motors and esp8266 NodeMCU board.
 
 \subsubsection{Connectivity to DC motors and esp8266 NodeMCU board}
-\begin{itemize}
-\item Robot wheel DC motors attached to the MotorA and MotorB terminal screws
-\end{itemize}
+For the connectivity if DC motors to esp8266 NodeMCU board, robot wheel DC motors are to be attached to the MotorA and MotorB terminal screws of stepper motor controller. In the Table \ref{T:pinlayout} shows the GPIO pin connectivity of esp8266 board to stepper motor controller pins.
+
 
 \begin{table}[htb]
 \caption{esp8266 GPIO to stepper motor pin connections}\label{T:pinlayout}
@@ -159,10 +158,10 @@ Actuator & GPIO Pin & L298N Pin \\
 \end{tabular}
 \end{table}
 
-Table below represent input pins for movement of Robot in different directions.
+The following Table \ref{T:gpiooutput} show the programming of GPIO pin outputs for the robot car to move in corresponding directions. When the pin status shows 1, it means that GPIO output of that pin will have triggered voltage of 5volts. When the pin status shows 0, then there won't be any voltage triggered.
 
 \begin{table}[htb]
-\caption{GPIO pin output for movement of robot car}
+\caption{GPIO pin output for movement of robot car}\label{T:gpiooutput}
 \begin{tabular}{lllll}
 Movement & Pin 12 & Pin 14 & Pin 15 & Pin 13 \\
 \hline
@@ -176,7 +175,7 @@ Stop  & 0 & 0 & 0 & 0 \\
 
 \subsection{Arduino IDE setup}
 \subsubsection{Steps:}
-
+The following steps shows how to configure Ardiono IDE setup in raspberry pi and to install esp8266 community build on the Ardiono IDE to support esp8266 NodeMCU board.
 \begin{itemize}
 
 \item Install Arduino IDE on Raspberry Pi
@@ -192,29 +191,29 @@ Stop  & 0 & 0 & 0 & 0 \\
   Raspberry Pi for the first time.
 
 \end{itemize}
-
+Figure \ref{F:arduino} shows the configuration setup for esp8266 NodeMCU board in Arduino IDE tool.
 \begin{figure}
-	\includegraphics[width=1.0\columnwidth]{images/Arduino-settings.jpg}
-	\caption{L298N Dual H-bridge Stepper Motor}
+	\includegraphics[width=1.0\columnwidth]{images/Arduino-settings.jpg}\label{F:arduino}
+	\caption{Arduino IDE configuration setup}
 \end{figure}
 
 \section{Code}
 Code for Obstacle Avoidance Robot car is ``Robot-Obstacle-Avoidance.ino`` and is placed in ``Code`` directory. Copy this code to Arduino IDE which is installed on Raspberry Pi and push the code to esp8266 NodeMCU using wifi or USB cable.
 
 \section{Working Images}
-
+In the Figure \ref{F:topview}, top view construction of designed robot car is displayed with all the connections being done. Side view of the car can be seen in Figure \ref{F:sideview} and the front view in Figure \ref{F:frontview}
 \begin{figure}[htb]
-	\includegraphics[width=1.0\columnwidth]{images/Top-view.jpg}
+	\includegraphics[width=1.0\columnwidth]{images/Top-view.jpg}\label{F:topview}
 	\caption{Top View of Robot Car}
 %\end{figure}
 
 %\begin{figure}
-	\includegraphics[width=1.0\columnwidth]{images/Side-view2.jpg}
+	\includegraphics[width=1.0\columnwidth]{images/Side-view2.jpg}\label{F:sideview}
 	\caption{Side view of Robot Car}
 %\end{figure}
 
 %\begin{figure}
-	\includegraphics[width=1.0\columnwidth]{images/Front-view.jpg}
+	\includegraphics[width=1.0\columnwidth]{images/Front-view.jpg}\label{F:frontview}
 	\caption{Front View of Robot Car}
 \end{figure}
 
