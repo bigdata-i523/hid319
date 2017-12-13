@@ -37,8 +37,11 @@ Servo myServo;
 const int triggerDistance = 25;
 
 // Variables
-unsigned int time1; // to store how long it takes for the ultrasonic wave to come back
-int distance;       // to store the distance calculated from the sensor
+unsigned int time1; // to store how long it takes
+                    // for the ultrasonic wave to come
+                    // back
+int distance;       // to store the distance calculated from
+                    // the sensor
 int fDistance;  // to store the distance in front of the robot
 int lDistance;  // to store the distance on the left side of the robot
 int rDistance;  // to store the distance on the right side of the robot
@@ -49,12 +52,10 @@ char rot[3];
 int rotation = 0;
 String output = "";
 
-void connectWiFi()
-{
+void connectWiFi() {
   Serial.println("Connecting to WIFI");
   WiFi.begin(ssid, password);
-  while ((!(WiFi.status() == WL_CONNECTED)))
-  {
+  while ((!(WiFi.status() == WL_CONNECTED))) {
     delay(300);
     Serial.print("..");
   }
@@ -64,8 +65,7 @@ void connectWiFi()
   Serial.print((WiFi.localIP()));
 }
 
-void scan(int deg)
-{
+void scan(int deg) {
   myServo.write(deg);
   delay(10);
 
