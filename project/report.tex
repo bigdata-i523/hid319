@@ -226,8 +226,8 @@ Setup as follows:
     \begin{lstlisting}
     POST /enroll HTTP/1.1
     Content-Type: application/json
-    app_id: 4985f625
-    app_key: aa9e5d2ec3b00306b2d9588c3a25d68e
+    app_id: your-app-id
+    app_key: your-app-key
     {
     "image":" http://media.kairos.com/user.jpg ",
     "subject_id":"User",
@@ -354,8 +354,8 @@ KairosConfig = './kairos_config.json'
 def trainKairos(image, name):
     global KairosGallery
     headers = {
-        'app_id': 'd39fc1b1',
-        'app_key': '468d508d9463c8d24395926adabb1769'
+        'app_id': 'your-app-idd39fc1b1',
+        'app_key': 'your-app-key'
     }
     data = {
         'image': base64.b64encode(image),
