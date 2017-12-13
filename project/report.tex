@@ -1,6 +1,6 @@
 \documentclass[sigconf]{acmart}
 
-\input{format/i523}
+\input{format/final}
 
 \graphicspath{ {images/} }
 
@@ -158,17 +158,21 @@ This section includes connectivity of Raspberry Pi over Wifi.
 \subsubsection{Enable Camera}
 For Face Detaction, PiCamera should be enable from Raspberry Pi. Below list of figures shows the detailed steps on how to enable PiCamera from Raspberry Pi.
 
-\begin{figure}[ht!]
+\begin{figure}[htb]
   \includegraphics[width=\columnwidth]{images/enablecamera1.jpg}
   \caption{Edit raspi-config file from command line}
-\end{figure}
+%\end{figure}
 
-\begin{figure}[ht!]
+\bigskip
+
+%\begin{figure}[ht!]
   \includegraphics[width=\columnwidth]{images/enablecamera2.jpg}
   \caption{Select Camera from the options}
-\end{figure}
+%\end{figure}
 
-\begin{figure}[ht!]
+\bigskip
+
+%\begin{figure}[ht!]
   \includegraphics[width=\columnwidth]{images/enablecamera3.jpg}
   \caption{Enable Camera}
 \end{figure}
@@ -182,16 +186,21 @@ OpenCV computer vision library is used to perform face detection and recognition
     \item[$\bullet$] cmake pkg-config python-dev libgtk2.0-dev libgtk2.0 zlib1g-dev libpng-dev libjpeg-dev libtiff-dev libjasper-dev libavcodec-dev swig unzip
     \item[$\bullet$] Select yes for all options and wait for the libraries and dependencies to be installed
 \end{description}
-Download opencv-2.4.9 zip file to Raspberry Pi. Change the directory and execute cmake command as below.
-\begin{description}
-    \item[$\bullet$] cd opencv-2.4.9
-    \item[$\bullet$] sudo apt-get install build-essential cmake pkg-config
-    \item[$\bullet$] sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
-    \item[$\bullet$] sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
-    \item[$\bullet$] sudo apt-get install python-opencv
-    \item[$\bullet$] sudo apt-get install python-matplotlib
-    \item[$\bullet$] Latest version of OpenCV is now installed in Raspberry Pi
-\end{description}
+Download opencv-2.4.9 zip file to Raspberry Pi. Change the directory and execute cmake command as follows:
+
+\begin{verbatim}
+  cd opencv-2.4.9
+  sudo apt-get install build-essential cmake pkg-config
+  sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+  sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev \    
+                       libjpeg-dev libpng-dev libtiff-dev \
+                       libjasper-dev libdc1394-22-dev
+  sudo apt-get install python-opencv
+  sudo apt-get install python-matplotlib
+
+\end{verbatim}
+
+After executing the commands the latest version of OpenCV is now installed in Raspberry Pi.
 
 \subsection{Integration of Raspberry Pi with Robot Car}
 Raspberry Pi connected with PiCamera is integrated with Robot car to navigate using webserver. During the navigation, robot car will look for human faces using PiCamera and then detects the face. Once the face is detected, python program will call Kairos facial detection software to identify the person and greet with the name. If the human face is unidentified then robot car will ask human to register their name.
@@ -203,14 +212,21 @@ As shown in the figure below, connect a Robot car chassis to raspberry pi and fo
   \caption{Raspberry Pi Robot Car Integration}
 \end{figure}
 
-\begin{description}
-    \item[$\bullet$] Motor1A : 16 (GPIO 23 - Pin 16)
-    \item[$\bullet$] Motor1B : 18 (GPIO 24 - Pin 18)
-    \item[$\bullet$] Motor1Enable : 22 (GPIO 25 - Pin 22)
-    \item[$\bullet$] Motor2A : 21 (GPIO 9 - Pin 21)
-    \item[$\bullet$] Motor2B : 19 (GPIO 10 - Pin 19)
-    \item[$\bullet$] Motor2Enable : 23 (GPIO 11 - Pin 23)
-\end{description}
+In Table \ref{T:pinlayout} we show ....
+
+\begin{table}[htb]
+\caption{WHat is this}\label{T:pinlayout}
+\begin{tabular}{lll}
+Actuator & Pin & ???? \\
+\hline
+    Motor1A & 16 & GPIO 23 - Pin 16 \\
+    Motor1B & 18 & GPIO 24 - Pin 18 \\
+    Motor1Enable & 22 & GPIO 25 - Pin 22 \\
+    Motor2A & 21 & GPIO 9 - Pin 21 \\
+    Motor2B & 19 & GPIO 10 - Pin 19 \\
+    Motor2Enable & 23 & GPIO 11 - Pin 23 \\
+\end{tabular}
+\end{table}
 
 \subsection{Kairos Face Recognition Setup}
 Kairos Face Recognition system has a free developer account which is used to identify the human name from the images. Once registered a human name with an image, the code will call Kairos API with a newly detected human face and will look for the registered name. Kairos will do a quick lookup in human database from the registered account and if it matches, will send the name of the human back to the code.
