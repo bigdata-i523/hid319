@@ -37,14 +37,17 @@ Servo myServo;
 const int triggerDistance = 25;
 
 // Variables
-unsigned int time1; // to store how long it takes
-                    // for the ultrasonic wave to come
-                    // back
-int distance;       // to store the distance calculated from
-                    // the sensor
-int fDistance;  // to store the distance in front of the robot
-int lDistance;  // to store the distance on the left side of the robot
-int rDistance;  // to store the distance on the right side of the robot
+unsigned int time1; // to store how long it 
+                    // takes for the ultrasonic 
+                    // wave to come back
+int distance;       // to store the distance calculated 
+                    // from the sensor
+int fDistance;      // to store the distance 
+                    // in front of the robot
+int lDistance;      // to store the distance on 
+                    // the left side of the robot
+int rDistance;      // to store the distance on 
+                    // the right side of the robot
 
 
 char dist[3];
@@ -80,8 +83,7 @@ void scan(int deg) {
 } 
 
 /*** FORWARD ***/
-void MotorForward(void)   
-{
+void MotorForward(void) {
   digitalWrite(leftMotorENB,HIGH);
   digitalWrite(rightMotorENB,HIGH);
   digitalWrite(leftMotorForward,HIGH);
@@ -91,8 +93,7 @@ void MotorForward(void)
 }
 
 /*** BACKWARD ***/
-void MotorBackward(void)   
-{
+void MotorBackward(void) {
   digitalWrite(leftMotorENB,HIGH);
   digitalWrite(rightMotorENB,HIGH);
   digitalWrite(leftMotorBackward,HIGH);
@@ -102,8 +103,7 @@ void MotorBackward(void)
 }
 
 /*** TURN LEFT ***/
-void TurnLeft(void)   
-{
+void TurnLeft(void) {
   digitalWrite(leftMotorENB,HIGH);
   digitalWrite(rightMotorENB,HIGH); 
   digitalWrite(leftMotorForward,HIGH);
@@ -113,8 +113,7 @@ void TurnLeft(void)
 }
 
 /*** TURN RIGHT***/
-void TurnRight(void)   
-{
+void TurnRight(void) {
   digitalWrite(leftMotorENB,HIGH);
   digitalWrite(rightMotorENB,HIGH);
   digitalWrite(leftMotorForward,HIGH);
@@ -124,8 +123,7 @@ void TurnRight(void)
 }
 
 /*** STOP ***/
-void MotorStop(void)   
-{
+void MotorStop(void) {
   digitalWrite(leftMotorENB,LOW);
   digitalWrite(rightMotorENB,LOW);
   digitalWrite(leftMotorForward,LOW);
@@ -135,8 +133,7 @@ void MotorStop(void)
 }
 
 /*** RECEIVE DATA FROM the APP ***/
-String checkClient (void)
-{
+String checkClient (void) {
   while(!client.available()) delay(1); 
   String request = client.readStringUntil('\r');
   request.remove(0, 5);
@@ -144,15 +141,15 @@ String checkClient (void)
   return request;
 }
 
-void setup()
-{
+void setup() {
   Serial.begin(115200);
   connectWiFi();
   server.begin();
 
   pinMode(TRIGGER_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
-  myServo.attach(SONAR_SERVO_PIN);  // Attaches the Servo to the Servo Object 
+  myServo.attach(SONAR_SERVO_PIN);  // Attaches the Servo 
+                                    //to the Servo Object 
   /* initialize motor control pins as output */
   pinMode(leftMotorForward, OUTPUT);
   pinMode(rightMotorForward, OUTPUT); 
@@ -166,10 +163,9 @@ void setup()
   /* start server communication */
 }
 
-void loop()
-{
+void loop() {
   
-  scan(90);                                //Get the distance retrieved
+  scan(90);  //Get the distance retrieved
   fDistance = distance;
   if(fDistance < triggerDistance){
     MotorBackward();
