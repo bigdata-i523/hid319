@@ -9,6 +9,7 @@ owner:
     city: Malaysia, Jalan SS21/58
     url: https://github.com/bigdata-i523/hid319
 paper1:
+    duplicate: True
     abstract: >
         As waste management becomes a greater concern for cities and
         municipalities around the world, big data analysis has the
