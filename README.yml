@@ -26,7 +26,6 @@ paper1:
     title: Big Data Analytics for Municipal Waste Management
     review: 10/17/17
     status: 100%
-    type: paper
     url: https://github.com/bigdata-i523/hid305/paper1
 paper2:
     review: Nov 20 2017
@@ -39,7 +38,6 @@ paper2:
         - 319
     status: 100%
     title: "Mini Project: ESP8266 and Raspberry Pi Robot Car"
-    type: project
     url: https://github.com/bigdata-i523/hid319/paper2
     chapter: Edge Computing
 project:
