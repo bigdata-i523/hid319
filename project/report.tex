@@ -77,6 +77,11 @@ For the past few years, Face recognition has become one of the most commonly use
   \caption{Block Diagram of a Face Recognition System}
 \end{figure}
 
+\subsection{Face Recognition and Big Data Analysis}
+
+Face Recognition and Big Data are two distinct technologies which are having hardly anything in common. But when they both are put together, a technology drift takes place in terms of biometric authentication. Storing a massive unique characteristics and libraries of human faces, algorithms are used to run on these characteristics to recognize the human face accurately. Using big data, a real-time analysis can be done which identifies faces and applies the rules as they are happening.
+
+Robot car is designed to collect all the facial features that are encountered on its path and store them in the cloud. When the face is detected by the camera, it sends the picture to the cloud and facial recognition software will compare with huge database of faces that are located in the cloud. Once the face features match, robot car will respond with the unique name that is set for that human face.
 
 \section{Software and Hardware Specifications}
 OpenCV is to be installed in Raspberry Pi to detect human faces within the captured images. Kairos face recognition software is used to recognize a human face and identify with the corresponding name.
@@ -227,6 +232,25 @@ The diagram in Figure \ref{F:circuit} shows the circuit connections of Raspberry
   \includegraphics[width=1.0\columnwidth]{images/RaspPi_Robot.jpg}
   \caption{Raspberry Pi Robot Car Integration}\label{F:circuit}
 \end{figure}
+
+Figures \ref{F:robotfront}, \ref{F:robotside}, \ref{F:robottop}  represents corresponding front view, sideview and topview of the robot car connections.
+
+\begin{figure}[htb]
+  \includegraphics[width=0.8\columnwidth]{images/RobotCar_FrontView.jpg}
+  \caption{Front view of Robot Car}\label{F:robotfront}
+%\end{figure}
+
+%\begin{figure}
+  \includegraphics[width=0.8\columnwidth]{images/RobotCar_SideView.jpg}
+  \caption{Side view of Robot Car}\label{F:robotside}
+%\end{figure}
+
+%\begin{figure}
+  \includegraphics[width=0.8\columnwidth]{images/RobotCar_TopView.jpg}
+  \caption{Top view of Robot Car}\label{F:robottop}
+\end{figure}
+
+
 In the Table \ref{T:pinlayout}, shows the connectivity of Raspberry Pi GPIO pins to L298N stepper motor controller.
 
 \begin{table}[htb]
